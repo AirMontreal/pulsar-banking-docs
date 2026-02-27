@@ -18,5 +18,6 @@ A complete, modern banking system for QBCore & ESX. Features 4 account types, ca
 
 - **Store:** [pulsarscript.com](https://pulsarscript.com)
 - **Website:** [pulsarscript.com](https://pulsarscript.com)
+- **Documentation:** [docs.pulsarscript.com](https://docs.pulsarscript.com)
 - **Discord:** [Join our Discord](https://discord.gg/pulsarscript)
 - **GitHub:** [github.com/AirMontreal](https://github.com/AirMontreal)

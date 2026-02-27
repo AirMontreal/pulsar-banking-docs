@@ -14,14 +14,14 @@ The billing system allows players to create, send, and manage invoices. It works
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `Enabled` | `true` | Enable/disable the billing system |
-| `OpenKey` | `F5` | Key to open the billing panel |
-| `DefaultTaxRate` | `0%` | Default tax applied to new invoices |
-| `MaxLineItems` | `10` | Max items per invoice |
-| `DueDays` | `7` | Default days until invoice is due |
-| `MaxPendingInvoices` | `10` | Max unpaid invoices per recipient |
-| `AutoOverdue` | `true` | Auto-mark invoices as overdue past due date |
-| `OverdueCheckInterval` | `30 min` | How often to check for overdue invoices |
+| Enabled | true | Enable/disable the billing system |
+| OpenKey | F5 | Key to open the billing panel |
+| DefaultTaxRate | 0% | Default tax applied to new invoices |
+| MaxLineItems | 10 | Max items per invoice |
+| DueDays | 7 | Default days until invoice is due |
+| MaxPendingInvoices | 10 | Max unpaid invoices per recipient |
+| AutoOverdue | true | Auto-mark invoices as overdue past due date |
+| OverdueCheckInterval | 30 min | How often to check for overdue invoices |
 
 ---
 

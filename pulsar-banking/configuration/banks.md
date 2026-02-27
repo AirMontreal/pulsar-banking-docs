@@ -14,14 +14,14 @@ Pulsar Banking comes with **8 pre-configured bank locations** across the GTA map
 
 | ID | Name | Type | Main Bank |
 |----|------|------|-----------|
-| `fleeca_legion` | Fleeca Bank - Legion Square | Fleeca | No |
-| `fleeca_alta` | Fleeca Bank - Alta Street | Fleeca | No |
-| `fleeca_burton` | Fleeca Bank - Burton | Fleeca | No |
-| `fleeca_delperro` | Fleeca Bank - Del Perro | Fleeca | No |
-| `fleeca_greatocean` | Fleeca Bank - Great Ocean Highway | Fleeca | No |
-| `fleeca_route68` | Fleeca Bank - Route 68 | Fleeca | No |
-| `pacific_standard` | Pacific Standard Bank | Pacific | Yes |
-| `blaine_county` | Blaine County Savings | Blaine | Yes |
+| fleeca_legion | Fleeca Bank - Legion Square | Fleeca | No |
+| fleeca_alta | Fleeca Bank - Alta Street | Fleeca | No |
+| fleeca_burton | Fleeca Bank - Burton | Fleeca | No |
+| fleeca_delperro | Fleeca Bank - Del Perro | Fleeca | No |
+| fleeca_greatocean | Fleeca Bank - Great Ocean Highway | Fleeca | No |
+| fleeca_route68 | Fleeca Bank - Route 68 | Fleeca | No |
+| pacific_standard | Pacific Standard Bank | Pacific | Yes |
+| blaine_county | Blaine County Savings | Blaine | Yes |
 
 ---
 
@@ -81,12 +81,12 @@ Each bank entry supports the following options:
 
 | Service | Description |
 |---------|-------------|
-| `checking` | Checking account creation |
-| `savings` | Savings account creation |
-| `loans` | Loan applications |
-| `cards` | Card ordering (debit/credit) |
+| checking | Checking account creation |
+| savings | Savings account creation |
+| loans | Loan applications |
+| cards | Card ordering (debit/credit) |
 
-> **Note:** `fleeca_route68` and `blaine_county` do not offer card services by default.
+> **Note:** fleeca_route68 and blaine_county do not offer card services by default.
 
 ---
 

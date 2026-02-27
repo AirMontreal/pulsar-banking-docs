@@ -45,9 +45,9 @@ Config.BusinessLoan = {
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `defaultScore` | `500` | Starting score for new players |
-| `minScore` | `300` | Minimum possible score |
-| `maxScore` | `850` | Maximum possible score |
+| defaultScore | 500 | Starting score for new players |
+| minScore | 300 | Minimum possible score |
+| maxScore | 850 | Maximum possible score |
 
 ### Score Changes
 
@@ -67,16 +67,16 @@ Config.BusinessLoan = {
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `gracePeriodHours` | `24` | Hours after due date before penalties |
-| `penaltyRate` | `2%` | Additional rate charged on overdue |
-| `maxOverdueBeforeDefault` | `5` | Missed payments before loan defaults |
+| gracePeriodHours | 24 | Hours after due date before penalties |
+| penaltyRate | 2% | Additional rate charged on overdue |
+| maxOverdueBeforeDefault | 5 | Missed payments before loan defaults |
 
 ---
 
 ## Loan Approval Flow
 
 1. Player applies for a loan at a bank
-2. If credit score >= `autoApproveMinScore` (700): **auto-approved**
+2. If credit score >= autoApproveMinScore (700): **auto-approved**
 3. If credit score < auto-approve threshold: **pending banker approval**
 4. Bankers with sufficient grade can approve/deny (see [Jobs](jobs.md))
 

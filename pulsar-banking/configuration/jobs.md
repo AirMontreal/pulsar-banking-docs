@@ -57,7 +57,7 @@ Config.BankJobs = {
 
 ### Change the Job Name
 
-If your server uses a different job name (e.g., `bankier`, `banquier`):
+If your server uses a different job name (e.g., bankier, banquier):
 
 1. Change the key in `Config.BankJobs`:
    ```lua

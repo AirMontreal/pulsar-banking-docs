@@ -59,13 +59,13 @@ Badges are achievements that players earn by using banking features. They serve 
 
 | Category | Badges |
 |----------|--------|
-| `basics` | First Deposit, First Transfer, First Withdrawal |
-| `savings` | Bronze/Silver/Gold Saver, Millionaire |
-| `investments` | Rookie/Pro Investor, Market Whale |
-| `loans` | Perfect Credit, Loan Master, Early Bird |
-| `accounts` | Diversified |
-| `goals` | Goal Achiever |
-| `smart` | Smart Money |
+| basics | First Deposit, First Transfer, First Withdrawal |
+| savings | Bronze/Silver/Gold Saver, Millionaire |
+| investments | Rookie/Pro Investor, Market Whale |
+| loans | Perfect Credit, Loan Master, Early Bird |
+| accounts | Diversified |
+| goals | Goal Achiever |
+| smart | Smart Money |
 
 ---
 

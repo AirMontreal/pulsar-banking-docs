@@ -6,7 +6,7 @@ Configuration file: `config/cards.lua`
 
 ## Overview
 
-Pulsar Banking includes 3 card types that function as physical inventory items. Cards can be ordered from any bank that offers the `cards` service.
+Pulsar Banking includes 3 card types that function as physical inventory items. Cards can be ordered from any bank that offers the cards service.
 
 ---
 
@@ -16,7 +16,7 @@ Pulsar Banking includes 3 card types that function as physical inventory items. 
 
 | Option | Value |
 |--------|-------|
-| Item Name | `debit_card` |
+| Item Name | debit_card |
 | Daily Limit | $10,000 |
 | Requires Credit Score | No |
 | Monthly Fee | $0 |
@@ -26,7 +26,7 @@ Pulsar Banking includes 3 card types that function as physical inventory items. 
 
 | Option | Value |
 |--------|-------|
-| Item Name | `credit_card` |
+| Item Name | credit_card |
 | Daily Limit | $15,000 |
 | Requires Credit Score | Yes (minimum 600) |
 | Monthly Fee | $100 |
@@ -47,7 +47,7 @@ Pulsar Banking includes 3 card types that function as physical inventory items. 
 
 | Option | Value |
 |--------|-------|
-| Item Name | `enterprise_card` |
+| Item Name | enterprise_card |
 | Daily Limit | $25,000 |
 | Requires Credit Score | No |
 | Monthly Fee | $0 |
@@ -62,8 +62,8 @@ Pulsar Banking includes 3 card types that function as physical inventory items. 
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `Config.CardNumberPrefix` | `'4532'` | Prefix for generated card numbers |
-| `Config.BlockCardOnItemRemove` | `true` | Block card when item is removed from inventory |
+| Config.CardNumberPrefix | 4532 | Prefix for generated card numbers |
+| Config.BlockCardOnItemRemove | true | Block card when item is removed from inventory |
 
 ---
 

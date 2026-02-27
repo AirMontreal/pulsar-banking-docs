@@ -31,17 +31,17 @@ Config.ATMModels = {
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `Config.ATMFee` | `$2.00` | Fee per ATM transaction |
-| `Config.ATMDailyLimit` | `$50,000` | Max daily ATM withdrawals |
+| Config.ATMFee | $2.00 | Fee per ATM transaction |
+| Config.ATMDailyLimit | $50,000 | Max daily ATM withdrawals |
 
 Additional ATM limits from `config/config.lua`:
 
 | Option | Default |
 |--------|---------|
-| `ATMMaxWithdraw` | `$25,000` per transaction |
-| `ATMMaxDeposit` | `$50,000` per transaction |
-| `ATMDailyWithdrawLimit` | `$50,000` |
-| `ATMDailyDepositLimit` | `$100,000` |
+| ATMMaxWithdraw | $25,000 per transaction |
+| ATMMaxDeposit | $50,000 per transaction |
+| ATMDailyWithdrawLimit | $50,000 |
+| ATMDailyDepositLimit | $100,000 |
 
 ---
 
@@ -69,7 +69,7 @@ By default, ATM blips are **disabled** on the map:
 Config.ShowATMBlips = false
 ```
 
-Set to `true` to show ATM locations on the minimap.
+Set to true to show ATM locations on the minimap.
 
 ---
 
@@ -77,7 +77,7 @@ Set to `true` to show ATM locations on the minimap.
 
 | Option | Value | File |
 |--------|-------|------|
-| Interact distance | `1.5` | `config/config.lua` |
-| Draw distance | `10.0` | `config/config.lua` |
-| Use target | `true` | `config/config.lua` |
+| Interact distance | 1.5 | config/config.lua |
+| Draw distance | 10.0 | config/config.lua |
+| Use target | true | config/config.lua |
 | Available 24/7 | Yes | Even when bank hours are enabled |

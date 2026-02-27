@@ -14,14 +14,14 @@ Pulsar Banking includes a full investment market with real-time stock and crypto
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `UpdateInterval` | `5 min` | Price update frequency |
-| `TradingFee` | `0.5%` | Fee per trade |
-| `MaxPortfolioValue` | `$500,000` | Max portfolio value (anti-exploit) |
-| `MaxOrderQuantity` | `1,000` | Max units per order |
-| `TrendChangeInterval` | `30 min` | How often trends shift |
-| `PriceHistoryRetention` | `168 hours` | 7 days of history |
-| `MinPrice` | `$0.01` | Minimum asset price |
-| `MaxPrice` | `$999,999.99` | Maximum asset price |
+| UpdateInterval | 5 min | Price update frequency |
+| TradingFee | 0.5% | Fee per trade |
+| MaxPortfolioValue | $500,000 | Max portfolio value (anti-exploit) |
+| MaxOrderQuantity | 1,000 | Max units per order |
+| TrendChangeInterval | 30 min | How often trends shift |
+| PriceHistoryRetention | 168 hours | 7 days of history |
+| MinPrice | $0.01 | Minimum asset price |
+| MaxPrice | $999,999.99 | Maximum asset price |
 
 ---
 
@@ -31,9 +31,9 @@ Real-time crypto prices fetched from the **CoinGecko API** (free, no API key).
 
 | In-Game Asset | Real-World Asset | CoinGecko ID |
 |---------------|-----------------|---------------|
-| BTC | Bitcoin | `bitcoin` |
-| ETH | Ethereum | `ethereum` |
-| Gold | PAX Gold | `pax-gold` |
+| BTC | Bitcoin | bitcoin |
+| ETH | Ethereum | ethereum |
+| Gold | PAX Gold | pax-gold |
 
 ```lua
 Config.Market.RealPrices = {
@@ -56,13 +56,13 @@ Real-time stock prices fetched from **Yahoo Finance** (free, no API key).
 
 | In-Game Asset | Real-World Stock | Ticker |
 |---------------|-----------------|--------|
-| Los Santos Customs | AutoZone | `AZO` |
-| Maze Bank Corp | JPMorgan Chase | `JPM` |
-| Merryweather Security | Lockheed Martin | `LMT` |
-| LifeInvader | Meta Platforms | `META` |
-| Pacific Standard | Goldman Sachs | `GS` |
-| Fleeca Holdings | Bank of America | `BAC` |
-| Crude Oil | WTI Crude Futures | `CL=F` |
+| Los Santos Customs | AutoZone | AZO |
+| Maze Bank Corp | JPMorgan Chase | JPM |
+| Merryweather Security | Lockheed Martin | LMT |
+| LifeInvader | Meta Platforms | META |
+| Pacific Standard | Goldman Sachs | GS |
+| Fleeca Holdings | Bank of America | BAC |
+| Crude Oil | WTI Crude Futures | CL=F |
 
 ```lua
 Config.Market.StockPrices = {
@@ -83,7 +83,7 @@ Config.Market.StockPrices = {
 
 ### Price Scaling
 
-If real stock prices are too high for your economy, increase `PriceScale`:
+If real stock prices are too high for your economy, increase PriceScale:
 
 | PriceScale | META ($600 real) | In-Game Price |
 |------------|-----------------|---------------|
@@ -106,10 +106,10 @@ Fixed-term savings with guaranteed interest rates.
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `earlyWithdrawalPenalty` | `50%` | Penalty for withdrawing early |
-| `maxActiveDeposits` | `3` | Max active deposits per player |
-| `minAmount` | `$1,000` | Minimum deposit |
-| `maxAmount` | `$500,000` | Maximum deposit |
+| earlyWithdrawalPenalty | 50% | Penalty for withdrawing early |
+| maxActiveDeposits | 3 | Max active deposits per player |
+| minAmount | $1,000 | Minimum deposit |
+| maxAmount | $500,000 | Maximum deposit |
 
 ```lua
 Config.TermDeposits = {
@@ -148,7 +148,7 @@ Config.TermDeposits = {
 
 ### Disabling Real Prices
 
-Set `Enabled = false` to use simulated prices instead of real market data:
+Set Enabled = false to use simulated prices instead of real market data:
 
 ```lua
 Config.Market.RealPrices.Enabled = false

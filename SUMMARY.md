@@ -1,36 +1,40 @@
 # Table of Contents
 
-- [Introduction](README.md)
-- [Installation](installation.md)
+- [Welcome](README.md)
 
-## Configuration
+## Pulsar Banking
 
-- [General Settings](configuration/general.md)
-- [Banks](configuration/banks.md)
-- [ATMs](configuration/atms.md)
-- [Cards](configuration/cards.md)
-- [Loans & Credit Score](configuration/loans.md)
-- [Jobs](configuration/jobs.md)
-- [Investments & Market](configuration/investments.md)
-- [Badges](configuration/badges.md)
-- [Billing & Invoices](configuration/billing.md)
+- [Introduction](pulsar-banking/README.md)
+- [Installation](pulsar-banking/installation.md)
 
-## Features
+### Configuration
 
-- [Accounts](features/accounts.md)
-- [Transactions](features/transactions.md)
-- [Cards](features/cards.md)
-- [Loans & Credit](features/loans.md)
-- [Investments & Market](features/investments.md)
-- [Organizations](features/organizations.md)
-- [Admin Panel](features/admin.md)
-- [Commands](features/commands.md)
+- [General Settings](pulsar-banking/configuration/general.md)
+- [Banks](pulsar-banking/configuration/banks.md)
+- [ATMs](pulsar-banking/configuration/atms.md)
+- [Cards](pulsar-banking/configuration/cards.md)
+- [Loans & Credit Score](pulsar-banking/configuration/loans.md)
+- [Jobs](pulsar-banking/configuration/jobs.md)
+- [Investments & Market](pulsar-banking/configuration/investments.md)
+- [Badges](pulsar-banking/configuration/badges.md)
+- [Billing & Invoices](pulsar-banking/configuration/billing.md)
 
-## Developers
+### Features
 
-- [Exports & API](features/exports.md)
-- [Events](features/events.md)
+- [Accounts](pulsar-banking/features/accounts.md)
+- [Transactions](pulsar-banking/features/transactions.md)
+- [Cards](pulsar-banking/features/cards.md)
+- [Loans & Credit](pulsar-banking/features/loans.md)
+- [Investments & Market](pulsar-banking/features/investments.md)
+- [Organizations](pulsar-banking/features/organizations.md)
+- [Admin Panel](pulsar-banking/features/admin.md)
+- [Commands](pulsar-banking/features/commands.md)
 
-## Help
+### Developers
 
-- [FAQ & Troubleshooting](faq.md)
+- [Exports & API](pulsar-banking/features/exports.md)
+- [Events](pulsar-banking/features/events.md)
+
+### Help
+
+- [FAQ & Troubleshooting](pulsar-banking/faq.md)

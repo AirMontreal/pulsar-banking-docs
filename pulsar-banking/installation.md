@@ -14,7 +14,7 @@ Make sure you have the following resources installed and running:
 | **ox_lib** | [GitHub](https://github.com/overextended/ox_lib) |
 | **ox_inventory** or **qb-inventory** | Auto-detected |
 | **ox_target** or **qb-target** | Auto-detected |
-| **QBCore** or **ESX** | Auto-detected |
+| **QBCore** or **ESX** | Set in config |
 
 ---
 

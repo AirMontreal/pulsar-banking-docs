@@ -8,14 +8,14 @@ Main configuration file: `config/config.lua`
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `Config.Framework` | `'qbcore'` | Framework: `'qbcore'` or `'esx'` |
+| `Config.Framework` | `'qbcore'` | Set your framework: `'qbcore'` or `'esx'` (must be set manually) |
 | `Config.Debug` | `false` | Enable debug prints in console |
 | `Config.Locale` | `'en'` | Language: `en`, `fr`, `es`, `de`, `it`, `pt`, `nl`, `tr` |
 | `Config.Currency` | `'$'` | Currency symbol |
 | `Config.CurrencyFormat` | `'en-US'` | Number formatting locale |
 | `Config.UseTarget` | `true` | Use target system (`true`) or draw markers (`false`) |
-| `Config.TargetSystem` | `'auto'` | `'auto'`, `'ox_target'`, or `'qb-target'` |
-| `Config.InventorySystem` | `'auto'` | `'auto'`, `'ox_inventory'`, or `'qb-inventory'` |
+| `Config.TargetSystem` | `'auto'` | Auto-detected, or force: `'ox_target'` / `'qb-target'` |
+| `Config.InventorySystem` | `'auto'` | Auto-detected, or force: `'ox_inventory'` / `'qb-inventory'` |
 
 ---
 

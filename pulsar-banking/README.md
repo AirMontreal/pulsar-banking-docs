@@ -8,7 +8,7 @@ Pulsar Banking is a complete, modern banking solution for your FiveM server. It 
 
 ## Key Features
 
-- **Multi-Framework** — Auto-detection for QBCore and ESX
+- **Multi-Framework** — Supports QBCore and ESX (target & inventory auto-detected)
 - **Full Banking System** — Checking, savings, joint, and organization accounts
 - **Card System** — Debit, credit, and enterprise cards with physical items
 - **Loan System** — Personal and business loans with credit scoring
@@ -32,7 +32,7 @@ Pulsar Banking is a complete, modern banking solution for your FiveM server. It 
 | [ox_lib](https://github.com/overextended/ox_lib) | Yes |
 | [ox_inventory](https://github.com/overextended/ox_inventory) or [qb-inventory](https://github.com/qbcore-framework/qb-inventory) | Yes (auto-detected) |
 | [ox_target](https://github.com/overextended/ox_target) or [qb-target](https://github.com/qbcore-framework/qb-target) | Yes (auto-detected) |
-| QBCore or ESX | Yes (auto-detected) |
+| QBCore or ESX | Yes (set in config) |
 
 ---
 

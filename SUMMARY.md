@@ -24,6 +24,12 @@
 - [Investments & Market](features/investments.md)
 - [Organizations](features/organizations.md)
 - [Admin Panel](features/admin.md)
+- [Commands](features/commands.md)
+
+## Developers
+
+- [Exports & API](features/exports.md)
+- [Events](features/events.md)
 
 ## Help
 

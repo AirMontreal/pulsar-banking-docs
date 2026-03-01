@@ -12,6 +12,12 @@ A complete, modern banking system for QBCore & ESX. Features 4 account types, ca
 
 **Price:** $79.99 | [Purchase](https://pulsarscript.com/product/7290799)
 
+### [Pulsar Emotes](https://docs.pulsarscript.com/pulsar-emotes/)
+
+A feature-rich emote menu for FiveM with 400+ emotes, walk styles, props, shared emotes, facial expressions, keybinds, and a full settings system. Compatible with QBCore & ESX.
+
+**Price:** Free | [Documentation](https://docs.pulsarscript.com/pulsar-emotes/)
+
 ---
 
 ## Links

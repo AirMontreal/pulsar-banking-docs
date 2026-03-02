@@ -1,34 +1,34 @@
-# Jobs Configuration
+# Configuration des Emplois
 
-Configuration file: `config/jobs.lua`
-
----
-
-## Overview
-
-The banker job allows players to work at banks, approve loans, manage accounts, and generate reports. Permissions are based on job grades.
+Fichier de configuration : `config/jobs.lua`
 
 ---
 
-## Banker Job Grades
+## Présentation
 
-| Grade | Name | Can Approve Loans | Max Loan Approval |
-|-------|------|-------------------|-------------------|
-| 0 | Teller | No | $0 |
-| 1 | Associate | Yes | $25,000 |
-| 2 | Manager | Yes | $100,000 |
-| 3 | Director | Yes | $500,000 |
+L'emploi de banquier permet aux joueurs de travailler dans des banques, d'approuver des prêts, de gérer des comptes et de générer des rapports. Les permissions sont basées sur les grades de l'emploi.
 
 ---
 
-## Permissions by Grade
+## Grades du Métier de Banquier
+
+| Grade | Nom | Peut approuver les prêts | Approbation max |
+|-------|-----|--------------------------|----------------|
+| 0 | Teller | Non | $0 |
+| 1 | Associate | Oui | $25,000 |
+| 2 | Manager | Oui | $100,000 |
+| 3 | Director | Oui | $500,000 |
+
+---
+
+## Permissions par Grade
 
 | Permission | Teller (0) | Associate (1) | Manager (2) | Director (3) |
-|------------|------------|---------------|-------------|--------------|
-| Approve Loans | No | Yes | Yes | Yes |
-| Freeze Accounts | No | No | Yes | Yes |
-| View All Accounts | No | Yes | Yes | Yes |
-| Generate Reports | No | No | Yes | Yes |
+|------------|-----------|--------------|------------|-------------|
+| Approuver les prêts | Non | Oui | Oui | Oui |
+| Geler les comptes | Non | Non | Oui | Oui |
+| Voir tous les comptes | Non | Oui | Oui | Oui |
+| Générer des rapports | Non | Non | Oui | Oui |
 
 ---
 
@@ -53,21 +53,21 @@ Config.BankJobs = {
 
 ---
 
-## Customizing
+## Personnalisation
 
-### Change the Job Name
+### Changer le Nom de l'Emploi
 
-If your server uses a different job name (e.g., bankier, banquier):
+Si votre serveur utilise un nom d'emploi différent (ex. : bankier, banquier) :
 
-1. Change the key in `Config.BankJobs`:
+1. Modifiez la clé dans `Config.BankJobs` :
    ```lua
    ['your_job_name'] = { ... }
    ```
-2. Update `Config.BankManagerJob` in `config/config.lua`:
+2. Mettez à jour `Config.BankManagerJob` dans `config/config.lua` :
    ```lua
    Config.BankManagerJob = 'your_job_name'
    ```
 
-### Add More Grades
+### Ajouter Plus de Grades
 
-Add additional grade entries to the `grades` table. Make sure grade numbers match your framework's job grades.
+Ajoutez des entrées de grade supplémentaires dans la table `grades`. Assurez-vous que les numéros de grade correspondent aux grades d'emploi de votre framework.

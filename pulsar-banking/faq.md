@@ -1,144 +1,94 @@
-# FAQ & Troubleshooting
+# FAQ & Dépannage
 
 ---
 
-## Installation Issues
+## Problèmes d'installation
 
-### The script doesn't start
+### Le script ne démarre pas
 
-**Check your dependencies are running:**
+**Vérifiez que vos dépendances sont en cours d'exécution :**
 ```
 ensure oxmysql
 ensure ox_lib
-ensure ox_inventory  -- or qb-inventory
-ensure pulsar-banking  -- MUST be after dependencies
+ensure ox_inventory  -- ou qb-inventory
+ensure pulsar-banking  -- DOIT être après les dépendances
 ```
 
-### SQL errors on startup
+### Erreurs SQL au démarrage
 
-Make sure you imported `sql/install.sql` into your database. The script requires all 21 tables to be present.
+Assurez-vous d'avoir importé `sql/install.sql` dans votre base de données. Le script nécessite les 21 tables.
 
-### Inventory items not showing
+### Objets d'inventaire introuvables
 
-- **ox_inventory:** Copy items from `install/ox_inventory_items.lua` into `ox_inventory/data/items.lua`
-- **qb-inventory:** Copy items from `install/qb_inventory_items.lua` into `qb-core/shared/items.lua`
-- Copy card images from `install/ox_inventory_images/` to your inventory's image folder
+- **ox_inventory :** Copiez les objets depuis `install/ox_inventory_items.lua` dans `ox_inventory/data/items.lua`
+- **qb-inventory :** Copiez les objets depuis `install/qb_inventory_items.lua` dans `qb-core/shared/items.lua`
+- Copiez les images depuis `install/ox_inventory_images/` vers le dossier d'images de votre inventaire
 
 ---
 
-## Configuration Issues
+## Problèmes de configuration
 
-### Framework not detected
+### Framework non détecté
 
-Set it manually in `config/config.lua`:
+Définissez-le manuellement dans `config/config.lua` :
 ```lua
-Config.Framework = 'qbcore'  -- or 'esx'
+Config.Framework = 'qbcore'  -- ou 'esx'
 ```
 
-### Target system not working
+### Les ATMs ne fonctionnent pas
 
-```lua
-Config.UseTarget = true
-Config.TargetSystem = 'ox_target'  -- or 'qb-target'
-```
+- Vérifiez que les modèles d'ATM sont corrects dans `config/atms.lua`
+- Vérifiez `Config.ATMInteractDistance` (défaut : 1.5)
 
-If you don't use a target system, set `Config.UseTarget = false` to use marker-based interaction.
+### Les intérêts ne sont pas versés
 
-### Interest not being paid
-
-Check these settings:
-- `Config.Interest.SavingsRate` — Must be greater than 0
-- `Config.Interest.MinBalanceForInterest` — Account must have at least this balance
-- `Config.InterestCycleMinutes` — How often interest is calculated (default: 60 min)
-
-### ATMs not working
-
-- Verify ATM models are correct in `config/atms.lua`
-- Check `Config.ATMInteractDistance` (default: 1.5)
-- If using custom MLO ATMs, add their prop model to `Config.ATMModels`
+- `Config.Interest.SavingsRate` doit être supérieur à 0
+- Le compte doit avoir au moins `Config.Interest.MinBalanceForInterest`
 
 ---
 
-## Gameplay Issues
+## Problèmes de gameplay
 
-### Player can't create an account
+### Le joueur ne peut pas créer de compte
 
-Possible reasons:
-- Reached max accounts (`Config.MaxAccountsPerPlayer = 5`)
-- Reached max for that type (e.g., 2 checking accounts)
-- Account opening fee not affordable
+- Nombre maximum de comptes atteint (`Config.MaxAccountsPerPlayer = 5`)
+- Frais d'ouverture insuffisants
 
-### Player can't transfer money
+### Le joueur ne peut pas effectuer de virement
 
-Possible reasons:
-- Daily transfer limit reached ($100,000)
-- Transfer cooldown active (15 seconds)
-- Account is frozen
-- Insufficient balance
-- Rate limit exceeded (60 transactions/hour)
+- Limite journalière atteinte (100 000 $)
+- Délai actif (15 secondes) ou compte gelé
 
-### Player can't get a loan
+### Le joueur ne peut pas obtenir un prêt
 
-Possible reasons:
-- Credit score too low (min 400 for personal, 550 for business)
-- Already has max active loans
-- Business loan requires a job
-- No banker online to approve (if score < 700)
+- Score de crédit trop bas (min. 400 personnel, 550 entreprise)
+- Prêt professionnel nécessite un emploi
 
-### Player can't order a credit card
+### Le compte est gelé
 
-- Credit score must be at least 600
-- Bank must offer the `cards` service (check `config/banks.lua`)
-
-### Account is frozen
-
-An account can be frozen by:
-- Admin action
-- Bank manager (grade 2+)
-- Auto-freeze (large transaction + low credit score)
-
-Only admins or bank managers can unfreeze accounts.
+Peut être gelé par un admin, un manager (grade 2+) ou automatiquement. Seuls les admins/managers peuvent dégeler.
 
 ---
 
-## Performance
-
-### Server lag when interest is calculated
-
-- Lower `Config.Interest.MaxInterestPayout` to reduce calculations
-- Increase `Config.InterestCycleMinutes` to run less frequently
-
-### Market prices not updating
-
-- Check your server can reach external APIs (CoinGecko, Yahoo Finance)
-- Ensure `Config.Market.RealPrices.Enabled = true`
-- Check server console for API errors
-
----
-
-## Common Errors
+## Erreurs courantes
 
 ### `SCRIPT ERROR: attempt to index a nil value`
 
-Usually means a config value is missing. Make sure you have all config files present and up to date.
+Valeur de config manquante — vérifiez que tous les fichiers config sont présents.
 
 ### `No such export`
 
-Make sure `ox_lib` and `oxmysql` are started before `pulsar-banking` in your `server.cfg`.
+`ox_lib` et `oxmysql` doivent démarrer avant `pulsar-banking`.
 
-### UI not opening
+### L'interface ne s'ouvre pas
 
-- Check the browser console (F8 in-game) for JavaScript errors
-- Verify `build/` folder contains `index.html` and `assets/` files
-- Ensure no other resource is conflicting on the same NUI focus
+- Vérifiez la console (F8) pour les erreurs JavaScript
+- Vérifiez que `build/` contient `index.html` et `assets/`
 
 ---
 
 ## Support
 
-If your issue isn't listed here:
-
-1. Enable debug mode: `Config.Debug = true`
-2. Check server console for error messages
-3. Check client console (F8) for client-side errors
-4. Open a support ticket on our Discord server
+1. Activez `Config.Debug = true`
+2. Vérifiez la console serveur et client (F8)
+3. Ouvrez un ticket sur notre serveur Discord

@@ -1,33 +1,33 @@
 # Exports & API
 
-Server-side exports for integrating Pulsar Banking with other resources.
+Exports côté serveur pour intégrer Pulsar Banking avec d'autres ressources.
 
 ---
 
-## Server Exports
+## Exports Serveur
 
 ### GetAccountBalance
 
-Returns the total balance for a player's accounts.
+Retourne le solde total des comptes d'un joueur.
 
 ```lua
 local balance = exports['pulsar-banking']:GetAccountBalance(citizenid, accountType)
 ```
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `citizenid` | string | Yes | Player's citizen ID |
-| `accountType` | string | No | Account type (`'checking'`, `'savings'`). Defaults to `'checking'` |
+| Paramètre | Type | Requis | Description |
+|-----------|------|--------|-------------|
+| `citizenid` | string | Oui | Identifiant citoyen du joueur |
+| `accountType` | string | Non | Type de compte (`'checking'`, `'savings'`). Par défaut `'checking'` |
 
-**Returns:** `number` — Total balance
+**Retourne :** `number` — Solde total
 
-**Example:**
+**Exemple :**
 ```lua
--- Get a player's checking balance
+-- Obtenir le solde courant d'un joueur
 local balance = exports['pulsar-banking']:GetAccountBalance('ABC12345')
-print('Balance: $' .. balance)
+print('Solde : $' .. balance)
 
--- Get savings balance
+-- Obtenir le solde épargne
 local savings = exports['pulsar-banking']:GetAccountBalance('ABC12345', 'savings')
 ```
 
@@ -35,19 +35,19 @@ local savings = exports['pulsar-banking']:GetAccountBalance('ABC12345', 'savings
 
 ### GetPlayerAccounts
 
-Returns all accounts belonging to a player.
+Retourne tous les comptes appartenant à un joueur.
 
 ```lua
 local accounts = exports['pulsar-banking']:GetPlayerAccounts(citizenid)
 ```
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `citizenid` | string | Yes | Player's citizen ID |
+| Paramètre | Type | Requis | Description |
+|-----------|------|--------|-------------|
+| `citizenid` | string | Oui | Identifiant citoyen du joueur |
 
-**Returns:** `table` — Array of account objects
+**Retourne :** `table` — Tableau d'objets compte
 
-**Example:**
+**Exemple :**
 ```lua
 local accounts = exports['pulsar-banking']:GetPlayerAccounts('ABC12345')
 for _, account in ipairs(accounts) do
@@ -57,22 +57,22 @@ end
 
 ---
 
-## Integration Examples
+## Exemples d'Intégration
 
-### Check balance before purchase
+### Vérifier le solde avant un achat
 
 ```lua
--- In your shop script (server-side)
+-- Dans votre script de boutique (côté serveur)
 local balance = exports['pulsar-banking']:GetAccountBalance(citizenid)
 if balance >= price then
-    -- Process purchase
+    -- Traiter l'achat
 end
 ```
 
-### Display all player accounts
+### Afficher tous les comptes d'un joueur
 
 ```lua
--- Server-side
+-- Côté serveur
 local accounts = exports['pulsar-banking']:GetPlayerAccounts(citizenid)
 for _, acc in ipairs(accounts) do
     print(string.format('[%s] %s - $%s', acc.account_type, acc.account_number, acc.balance))

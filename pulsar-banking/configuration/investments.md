@@ -1,36 +1,36 @@
-# Investments & Market Configuration
+# Configuration des Investissements & du Marché
 
-Configuration file: `config/investments.lua`
-
----
-
-## Overview
-
-Pulsar Banking includes a full investment market with real-time stock and crypto prices. Players can buy, sell, and hold assets in their portfolio.
+Fichier de configuration : `config/investments.lua`
 
 ---
 
-## Market Settings
+## Présentation
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| UpdateInterval | 5 min | Price update frequency |
-| TradingFee | 0.5% | Fee per trade |
-| MaxPortfolioValue | $500,000 | Max portfolio value (anti-exploit) |
-| MaxOrderQuantity | 1,000 | Max units per order |
-| TrendChangeInterval | 30 min | How often trends shift |
-| PriceHistoryRetention | 168 hours | 7 days of history |
-| MinPrice | $0.01 | Minimum asset price |
-| MaxPrice | $999,999.99 | Maximum asset price |
+Pulsar Banking inclut un marché d'investissement complet avec des cours d'actions et de cryptomonnaies en temps réel. Les joueurs peuvent acheter, vendre et conserver des actifs dans leur portefeuille.
 
 ---
 
-## Crypto Prices (CoinGecko)
+## Paramètres du Marché
 
-Real-time crypto prices fetched from the **CoinGecko API** (free, no API key).
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| UpdateInterval | 5 min | Fréquence de mise à jour des prix |
+| TradingFee | 0.5% | Frais par transaction |
+| MaxPortfolioValue | $500,000 | Valeur maximale du portefeuille (anti-exploit) |
+| MaxOrderQuantity | 1,000 | Quantité maximale par ordre |
+| TrendChangeInterval | 30 min | Fréquence de changement des tendances |
+| PriceHistoryRetention | 168 heures | 7 jours d'historique |
+| MinPrice | $0.01 | Prix minimum d'un actif |
+| MaxPrice | $999,999.99 | Prix maximum d'un actif |
 
-| In-Game Asset | Real-World Asset | CoinGecko ID |
-|---------------|-----------------|---------------|
+---
+
+## Prix des Cryptomonnaies (CoinGecko)
+
+Prix des cryptomonnaies en temps réel récupérés depuis l'**API CoinGecko** (gratuit, sans clé API).
+
+| Actif en jeu | Actif réel | ID CoinGecko |
+|-------------|-----------|-------------|
 | BTC | Bitcoin | bitcoin |
 | ETH | Ethereum | ethereum |
 | Gold | PAX Gold | pax-gold |
@@ -50,12 +50,12 @@ Config.Market.RealPrices = {
 
 ---
 
-## Stock Prices (Yahoo Finance)
+## Prix des Actions (Yahoo Finance)
 
-Real-time stock prices fetched from **Yahoo Finance** (free, no API key).
+Prix des actions en temps réel récupérés depuis **Yahoo Finance** (gratuit, sans clé API).
 
-| In-Game Asset | Real-World Stock | Ticker |
-|---------------|-----------------|--------|
+| Actif en jeu | Action réelle | Symbole |
+|-------------|--------------|---------|
 | Los Santos Customs | AutoZone | AZO |
 | Maze Bank Corp | JPMorgan Chase | JPM |
 | Merryweather Security | Lockheed Martin | LMT |
@@ -76,40 +76,40 @@ Config.Market.StockPrices = {
         fleeca_stock  = 'BAC',
         oil           = 'CL=F',
     },
-    PriceScale = 1,       -- Divide real price by this (1 = 1:1)
+    PriceScale = 1,       -- Diviser le prix réel par cette valeur (1 = 1:1)
     FetchInterval = 5,    -- minutes
 }
 ```
 
-### Price Scaling
+### Mise à l'Échelle des Prix
 
-If real stock prices are too high for your economy, increase PriceScale:
+Si les prix réels des actions sont trop élevés pour votre économie, augmentez PriceScale :
 
-| PriceScale | META ($600 real) | In-Game Price |
-|------------|-----------------|---------------|
+| PriceScale | META ($600 réel) | Prix en jeu |
+|-----------|----------------|------------|
 | 1 | $600 | $600 |
 | 10 | $600 | $60 |
 | 100 | $600 | $6 |
 
 ---
 
-## Term Deposits
+## Dépôts à Terme
 
-Fixed-term savings with guaranteed interest rates.
+Épargne à durée fixe avec des taux d'intérêt garantis.
 
-| Duration | Interest Rate |
-|----------|---------------|
-| 7 days | 0.1% |
-| 14 days | 0.3% |
-| 30 days | 0.5% |
-| 90 days | 1.0% |
+| Durée | Taux d'intérêt |
+|-------|---------------|
+| 7 jours | 0.1% |
+| 14 jours | 0.3% |
+| 30 jours | 0.5% |
+| 90 jours | 1.0% |
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| earlyWithdrawalPenalty | 50% | Penalty for withdrawing early |
-| maxActiveDeposits | 3 | Max active deposits per player |
-| minAmount | $1,000 | Minimum deposit |
-| maxAmount | $500,000 | Maximum deposit |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| earlyWithdrawalPenalty | 50% | Pénalité pour retrait anticipé |
+| maxActiveDeposits | 3 | Nombre maximum de dépôts actifs par joueur |
+| minAmount | $1,000 | Dépôt minimum |
+| maxAmount | $500,000 | Dépôt maximum |
 
 ```lua
 Config.TermDeposits = {
@@ -128,27 +128,27 @@ Config.TermDeposits = {
 
 ---
 
-## Adding Custom Assets
+## Ajouter des Actifs Personnalisés
 
-### Add a Crypto Asset
+### Ajouter une Cryptomonnaie
 
-1. Find the CoinGecko ID at [coingecko.com](https://www.coingecko.com)
-2. Add it to `Config.Market.RealPrices.Assets`:
+1. Trouvez l'ID CoinGecko sur [coingecko.com](https://www.coingecko.com)
+2. Ajoutez-le à `Config.Market.RealPrices.Assets` :
    ```lua
    sol = 'solana',
    ```
 
-### Add a Stock Asset
+### Ajouter une Action
 
-1. Find the Yahoo Finance ticker symbol
-2. Add it to `Config.Market.StockPrices.Assets`:
+1. Trouvez le symbole Yahoo Finance correspondant
+2. Ajoutez-le à `Config.Market.StockPrices.Assets` :
    ```lua
    my_stock = 'AAPL',   -- Apple Inc.
    ```
 
-### Disabling Real Prices
+### Désactiver les Prix Réels
 
-Set Enabled = false to use simulated prices instead of real market data:
+Définissez Enabled = false pour utiliser des prix simulés au lieu des données de marché réelles :
 
 ```lua
 Config.Market.RealPrices.Enabled = false

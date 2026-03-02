@@ -1,165 +1,165 @@
-# General Settings
+# Paramètres Généraux
 
-Main configuration file: `config/config.lua`
-
----
-
-## Framework & System
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| Config.Framework | qbcore | Set your framework: qbcore or esx (must be set manually) |
-| Config.Debug | false | Enable debug prints in console |
-| Config.Locale | en | Language: en, fr, es, de, it, pt, nl, tr |
-| Config.Currency | $ | Currency symbol |
-| Config.CurrencyFormat | en-US | Number formatting locale |
-| Config.UseTarget | true | Use target system or draw markers |
-| Config.TargetSystem | auto | Auto-detected, or force: ox\_target / qb-target |
-| Config.InventorySystem | auto | Auto-detected, or force: ox\_inventory / qb-inventory |
+Fichier de configuration principal : `config/config.lua`
 
 ---
 
-## Account Settings
+## Framework & Système
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| Config.DefaultPIN | 0000 | Default PIN for new accounts |
-| Config.MaxAccountsPerPlayer | 5 | Total max accounts per player |
-| Config.MaxPersonalAccounts | 2 | Max checking/savings accounts |
-| Config.MaxBusinessAccounts | 2 | Max organization accounts |
-| Config.MaxJointAccounts | 2 | Max joint accounts |
-| Config.AccountNumberPrefix | PB | Prefix for account numbers |
-
----
-
-## Limits
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| DailyWithdrawLimit | $50,000 | Max daily withdrawals |
-| DailyTransferLimit | $100,000 | Max daily transfers |
-| LargeTransactionThreshold | $50,000 | Threshold for large transaction alerts |
-| LowBalanceThreshold | $500 | Low balance warning level |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| Config.Framework | qbcore | Définissez votre framework : qbcore ou esx (doit être défini manuellement) |
+| Config.Debug | false | Active les messages de débogage dans la console |
+| Config.Locale | en | Langue : en, fr, es, de, it, pt, nl, tr |
+| Config.Currency | $ | Symbole de devise |
+| Config.CurrencyFormat | en-US | Locale de formatage des nombres |
+| Config.UseTarget | true | Utiliser le système de cible ou afficher des marqueurs |
+| Config.TargetSystem | auto | Détecté automatiquement, ou forcer : ox\_target / qb-target |
+| Config.InventorySystem | auto | Détecté automatiquement, ou forcer : ox\_inventory / qb-inventory |
 
 ---
 
-## Account Limits (Extended)
+## Paramètres de Compte
+
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| Config.DefaultPIN | 0000 | Code PIN par défaut pour les nouveaux comptes |
+| Config.MaxAccountsPerPlayer | 5 | Nombre maximum total de comptes par joueur |
+| Config.MaxPersonalAccounts | 2 | Nombre maximum de comptes courants/épargne |
+| Config.MaxBusinessAccounts | 2 | Nombre maximum de comptes d'organisation |
+| Config.MaxJointAccounts | 2 | Nombre maximum de comptes joints |
+| Config.AccountNumberPrefix | PB | Préfixe pour les numéros de compte |
+
+---
+
+## Limites
+
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| DailyWithdrawLimit | $50,000 | Retraits journaliers maximum |
+| DailyTransferLimit | $100,000 | Virements journaliers maximum |
+| LargeTransactionThreshold | $50,000 | Seuil pour les alertes de transactions importantes |
+| LowBalanceThreshold | $500 | Niveau d'avertissement de solde bas |
+
+---
+
+## Limites de Compte (Étendu)
 
 ```lua
 Config.AccountLimits = {
-    MaxCheckingBalance = 0,        -- 0 = unlimited
+    MaxCheckingBalance = 0,        -- 0 = illimité
     MaxSavingsBalance = 0,
     MaxOrganizationBalance = 0,
     MinCheckingBalance = 0,
     MinSavingsBalance = 0,
-    ATMMaxWithdraw = 25000,        -- Per ATM transaction
+    ATMMaxWithdraw = 25000,        -- Par transaction au DAB
     ATMMaxDeposit = 50000,
     ATMDailyWithdrawLimit = 50000,
     ATMDailyDepositLimit = 100000,
-    MaxTransferAmount = 500000,    -- Per transfer
+    MaxTransferAmount = 500000,    -- Par virement
     MinTransferAmount = 1,
-    OverdraftEnabled = false,      -- Allow negative balance
+    OverdraftEnabled = false,      -- Autoriser un solde négatif
     OverdraftLimit = 5000,
     OverdraftInterestRate = 0.05,  -- 5%
-    OverdraftFee = 35,             -- Flat fee
+    OverdraftFee = 35,             -- Frais fixe
 }
 ```
 
 ---
 
-## Fees & Commissions
+## Frais & Commissions
 
-| Fee | Default | Description |
-|-----|---------|-------------|
-| TransferFee | 0% | Percentage fee on transfers |
-| TransferFlatFee | $0 | Flat fee added to transfers |
-| ATMWithdrawFee | $0 | Per ATM withdrawal |
-| ATMDepositFee | $0 | Per ATM deposit |
-| MonthlyMaintenanceFee | $0 | Charged every interest cycle |
-| OpenAccountFee | $0 | Fee to open an account |
-| CloseAccountFee | $0 | Fee to close an account |
-| WireTransferFee | $250 | Cross-bank transfers |
-| ExchangeFee | 2% | Currency exchange (future) |
-
----
-
-## Interest Rates
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| SavingsRate | 0.5% | Interest per cycle for savings |
-| CheckingRate | 0% | Interest per cycle for checking |
-| CompoundInterest | true | Compound or simple interest |
-| MinBalanceForInterest | $100 | Minimum balance to earn interest |
-| MaxInterestPayout | $10,000 | Max payout per cycle (anti-exploit) |
-| HighBalanceThreshold | $500,000 | Threshold for bonus rate |
-| HighBalanceBonusRate | 0.1% | Bonus rate for high balances |
-| WealthTaxThreshold | $5,000,000 | Threshold for wealth tax |
-| WealthTaxRate | 0% | Wealth tax rate (disabled) |
-
-> **Interest Cycle:** Runs every `Config.InterestCycleMinutes` (default: 60 minutes).
+| Frais | Par défaut | Description |
+|-------|-----------|-------------|
+| TransferFee | 0% | Frais en pourcentage sur les virements |
+| TransferFlatFee | $0 | Frais fixe ajouté aux virements |
+| ATMWithdrawFee | $0 | Par retrait au DAB |
+| ATMDepositFee | $0 | Par dépôt au DAB |
+| MonthlyMaintenanceFee | $0 | Prélevé à chaque cycle d'intérêts |
+| OpenAccountFee | $0 | Frais d'ouverture de compte |
+| CloseAccountFee | $0 | Frais de fermeture de compte |
+| WireTransferFee | $250 | Virements interbancaires |
+| ExchangeFee | 2% | Change de devises (futur) |
 
 ---
 
-## Security
+## Taux d'Intérêt
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| MaxPINAttempts | 5 | Attempts before lockout |
-| PINLockoutMinutes | 15 | Lockout duration |
-| TransferCooldownSeconds | 15 | Cooldown between transfers |
-| WithdrawCooldownSeconds | 10 | Cooldown between withdrawals |
-| DepositCooldownSeconds | 10 | Cooldown between deposits |
-| MaxTransactionsPerHour | 60 | Rate limit per player |
-| AutoFreezeEnabled | true | Auto-freeze suspicious accounts |
-| AutoFreezeThreshold | $100,000 | Amount that triggers review |
-| AutoFreezeCreditScore | 350 | Credit score threshold |
-| LargeTransferConfirmation | true | Confirm large transfers |
-| LargeTransferThreshold | $50,000 | Confirmation threshold |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| SavingsRate | 0.5% | Intérêts par cycle pour l'épargne |
+| CheckingRate | 0% | Intérêts par cycle pour le courant |
+| CompoundInterest | true | Intérêts composés ou simples |
+| MinBalanceForInterest | $100 | Solde minimum pour percevoir des intérêts |
+| MaxInterestPayout | $10,000 | Versement maximum par cycle (anti-exploit) |
+| HighBalanceThreshold | $500,000 | Seuil pour le taux bonifié |
+| HighBalanceBonusRate | 0.1% | Taux bonus pour les soldes élevés |
+| WealthTaxThreshold | $5,000,000 | Seuil pour la taxe sur la fortune |
+| WealthTaxRate | 0% | Taux de taxe sur la fortune (désactivé) |
+
+> **Cycle d'intérêts :** S'exécute toutes les `Config.InterestCycleMinutes` (par défaut : 60 minutes).
 
 ---
 
-## Enterprise / Organizations
+## Sécurité
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| MaxMembers | 50 | Max members per organization |
-| MaxOrgsPerPlayer | 3 | Max organizations per player (as owner) |
-| MinBalanceToCreate | $0 | Min balance to create an org |
-| CreationFee | $0 | Fee to create an org |
-| AutoPayroll | false | Automatic salary payments |
-| BusinessTaxRate | 0% | Tax on org income |
-| AllowOrgToPersonalTransfer | true | Allow org to personal transfers |
-| OrgToPersonalDailyLimit | $100,000 | Daily org to personal limit |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| MaxPINAttempts | 5 | Tentatives avant le verrouillage |
+| PINLockoutMinutes | 15 | Durée du verrouillage |
+| TransferCooldownSeconds | 15 | Délai entre les virements |
+| WithdrawCooldownSeconds | 10 | Délai entre les retraits |
+| DepositCooldownSeconds | 10 | Délai entre les dépôts |
+| MaxTransactionsPerHour | 60 | Limite de débit par joueur |
+| AutoFreezeEnabled | true | Gel automatique des comptes suspects |
+| AutoFreezeThreshold | $100,000 | Montant déclenchant une vérification |
+| AutoFreezeCreditScore | 350 | Seuil de score de crédit pour le gel automatique |
+| LargeTransferConfirmation | true | Confirmation pour les virements importants |
+| LargeTransferThreshold | $50,000 | Seuil de confirmation |
 
-### Role Permissions
+---
 
-| Permission | Owner | Manager | Employee |
-|------------|-------|---------|----------|
-| Withdraw | Yes | Yes | No |
-| Deposit | Yes | Yes | Yes |
-| Transfer | Yes | Yes | No |
-| Manage Members | Yes | Yes | No |
-| View Logs | Yes | Yes | No |
-| Settings | Yes | No | No |
-| Invoices | Yes | Yes | Yes |
-| Close Account | Yes | No | No |
+## Entreprise / Organisations
+
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| MaxMembers | 50 | Membres maximum par organisation |
+| MaxOrgsPerPlayer | 3 | Organisations maximum par joueur (en tant que propriétaire) |
+| MinBalanceToCreate | $0 | Solde minimum pour créer une organisation |
+| CreationFee | $0 | Frais de création d'une organisation |
+| AutoPayroll | false | Versements de salaires automatiques |
+| BusinessTaxRate | 0% | Taxe sur les revenus de l'organisation |
+| AllowOrgToPersonalTransfer | true | Autoriser les virements org. vers personnel |
+| OrgToPersonalDailyLimit | $100,000 | Limite journalière org. vers personnel |
+
+### Permissions par Rôle
+
+| Permission | Propriétaire | Gestionnaire | Employé |
+|------------|-------------|-------------|---------|
+| Retrait | Oui | Oui | Non |
+| Dépôt | Oui | Oui | Oui |
+| Virement | Oui | Oui | Non |
+| Gérer les membres | Oui | Oui | Non |
+| Voir les journaux | Oui | Oui | Non |
+| Paramètres | Oui | Non | Non |
+| Factures | Oui | Oui | Oui |
+| Fermer le compte | Oui | Non | Non |
 
 ---
 
 ## Gameplay
 
-### Bank Hours
+### Horaires Bancaires
 ```lua
 BankHours = {
-    Enabled = false,    -- Set true to restrict hours
-    OpenHour = 8,       -- 8 AM
-    CloseHour = 22,     -- 10 PM
+    Enabled = false,    -- Mettre true pour restreindre les horaires
+    OpenHour = 8,       -- 8h00
+    CloseHour = 22,     -- 22h00
 }
 ```
-> ATMs remain available 24/7 even with bank hours enabled.
+> Les DAB restent disponibles 24h/24 même lorsque les horaires bancaires sont activés.
 
-### Robbery Integration
+### Intégration Braquage
 ```lua
 Robbery = {
     Enabled = false,
@@ -170,7 +170,7 @@ Robbery = {
 }
 ```
 
-### Death Penalty
+### Pénalité de Mort
 ```lua
 DeathPenalty = {
     Enabled = false,
@@ -181,7 +181,7 @@ DeathPenalty = {
 }
 ```
 
-### Welfare System
+### Système d'Aides Sociales
 ```lua
 Welfare = {
     Enabled = false,
@@ -196,53 +196,53 @@ Welfare = {
 
 ## Notifications & Discord
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| DiscordWebhook | empty | Discord webhook URL (empty = disabled) |
-| DiscordBotName | Pulsar Banking | Bot display name |
-| DiscordColor | 16750848 | Embed color (decimal) |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| DiscordWebhook | vide | URL du webhook Discord (vide = désactivé) |
+| DiscordBotName | Pulsar Banking | Nom d'affichage du bot |
+| DiscordColor | 16750848 | Couleur de l'embed (décimal) |
 
-### Discord Logging Events
+### Événements Enregistrés sur Discord
 
-| Event | Default |
-|-------|---------|
-| Large Transactions | Yes (above $50,000) |
-| Loan Applications | Yes |
-| Account Creation | Yes |
-| Account Closure | Yes |
-| Suspicious Activity | Yes |
-| Admin Actions | Yes |
-
----
-
-## Quality of Life
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| EnableFavorites | true | Save frequent recipients |
-| MaxFavorites | 20 | Max saved contacts |
-| QuickAmounts | 100, 500, 1k, 5k, 10k, 50k | Preset quick amounts |
-| EnableAccountNicknames | true | Rename accounts |
-| EnableRoundUpSavings | true | Auto round-up to savings |
-| EnableSounds | true | UI sound effects |
-| SoundVolume | 0.5 | Sound volume (0-1) |
-| EnableBalanceHUD | false | Balance HUD on screen |
-| BalanceHUDKey | F6 | Key to toggle HUD |
+| Événement | Par défaut |
+|-----------|-----------|
+| Transactions importantes | Oui (au-dessus de $50,000) |
+| Demandes de prêt | Oui |
+| Création de compte | Oui |
+| Fermeture de compte | Oui |
+| Activité suspecte | Oui |
+| Actions administratives | Oui |
 
 ---
 
-## Scheduled Tasks
+## Qualité de Vie
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| InterestCycleMinutes | 60 | Interest payout interval |
-| LoanCheckMinutes | 30 | Loan payment check interval |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| EnableFavorites | true | Sauvegarder les destinataires fréquents |
+| MaxFavorites | 20 | Nombre maximum de contacts sauvegardés |
+| QuickAmounts | 100, 500, 1k, 5k, 10k, 50k | Montants rapides prédéfinis |
+| EnableAccountNicknames | true | Renommer les comptes |
+| EnableRoundUpSavings | true | Arrondi automatique vers l'épargne |
+| EnableSounds | true | Effets sonores de l'interface |
+| SoundVolume | 0.5 | Volume des sons (0-1) |
+| EnableBalanceHUD | false | Affichage du solde sur le HUD |
+| BalanceHUDKey | F6 | Touche pour basculer l'affichage HUD |
 
 ---
 
-## Data Cleanup
+## Tâches Planifiées
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| AuditLogDays | 30 | Delete old audit logs |
-| NotificationDays | 14 | Delete old read notifications |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| InterestCycleMinutes | 60 | Intervalle de versement des intérêts |
+| LoanCheckMinutes | 30 | Intervalle de vérification des paiements de prêt |
+
+---
+
+## Nettoyage des Données
+
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| AuditLogDays | 30 | Suppression des anciens journaux d'audit |
+| NotificationDays | 14 | Suppression des anciennes notifications lues |

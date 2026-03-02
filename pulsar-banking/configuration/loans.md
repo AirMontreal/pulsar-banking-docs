@@ -1,36 +1,36 @@
-# Loans & Credit Score Configuration
+# Configuration des Prêts & du Score de Crédit
 
-Configuration file: `config/loans.lua`
+Fichier de configuration : `config/loans.lua`
 
 ---
 
-## Loan Types
+## Types de Prêts
 
-### Personal Loan
+### Prêt Personnel
 
-| Option | Value |
-|--------|-------|
-| Min Amount | $1,000 |
-| Max Amount | $100,000 |
-| Min Term | 7 days |
-| Max Term | 90 days |
-| Min Credit Score | 400 |
-| Auto-Approve Score | 700+ |
-| Max Active Loans | 2 |
+| Option | Valeur |
+|--------|--------|
+| Montant minimum | $1,000 |
+| Montant maximum | $100,000 |
+| Durée minimum | 7 jours |
+| Durée maximum | 90 jours |
+| Score de crédit minimum | 400 |
+| Score d'approbation automatique | 700+ |
+| Prêts actifs maximum | 2 |
 
-### Business Loan
+### Prêt Professionnel
 
-| Option | Value |
-|--------|-------|
-| Min Amount | $1,000 |
-| Max Amount | $250,000 |
-| Min Term | 14 days |
-| Max Term | 180 days |
-| Min Credit Score | 550 |
-| Auto-Approve Score | 700+ |
-| Max Active Loans | 1 |
+| Option | Valeur |
+|--------|--------|
+| Montant minimum | $1,000 |
+| Montant maximum | $250,000 |
+| Durée minimum | 14 jours |
+| Durée maximum | 180 jours |
+| Score de crédit minimum | 550 |
+| Score d'approbation automatique | 700+ |
+| Prêts actifs maximum | 1 |
 
-**Business Loan Requirements:**
+**Conditions du prêt professionnel :**
 
 ```lua
 Config.BusinessLoan = {
@@ -41,48 +41,48 @@ Config.BusinessLoan = {
 
 ---
 
-## Credit Score System
+## Système de Score de Crédit
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| defaultScore | 500 | Starting score for new players |
-| minScore | 300 | Minimum possible score |
-| maxScore | 850 | Maximum possible score |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| defaultScore | 500 | Score de départ pour les nouveaux joueurs |
+| minScore | 300 | Score minimum possible |
+| maxScore | 850 | Score maximum possible |
 
-### Score Changes
+### Variations du Score
 
-| Event | Impact |
-|-------|--------|
-| Loan repaid on time | **+30** |
-| Loan default | **-150** |
-| Late payment | **-25** |
-| Account age (per cycle) | **+5** (max +50) |
-| Invoice paid on time | **+5** (max +50) |
-| Invoice paid late | **+2** |
-| Invoice overdue | **-15** (max -75) |
-
----
-
-## Loan Penalties
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| gracePeriodHours | 24 | Hours after due date before penalties |
-| penaltyRate | 2% | Additional rate charged on overdue |
-| maxOverdueBeforeDefault | 5 | Missed payments before loan defaults |
+| Événement | Impact |
+|-----------|--------|
+| Prêt remboursé à temps | **+30** |
+| Défaut de paiement | **-150** |
+| Paiement en retard | **-25** |
+| Ancienneté du compte (par cycle) | **+5** (max +50) |
+| Facture payée à temps | **+5** (max +50) |
+| Facture payée en retard | **+2** |
+| Facture en souffrance | **-15** (max -75) |
 
 ---
 
-## Loan Approval Flow
+## Pénalités de Prêt
 
-1. Player applies for a loan at a bank
-2. If credit score >= autoApproveMinScore (700): **auto-approved**
-3. If credit score < auto-approve threshold: **pending banker approval**
-4. Bankers with sufficient grade can approve/deny (see [Jobs](jobs.md))
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| gracePeriodHours | 24 | Heures de grâce après la date d'échéance avant pénalités |
+| penaltyRate | 2% | Taux supplémentaire appliqué en cas de retard |
+| maxOverdueBeforeDefault | 5 | Paiements manqués avant la mise en défaut du prêt |
 
 ---
 
-## Customizing Loan Types
+## Processus d'Approbation des Prêts
+
+1. Le joueur soumet une demande de prêt dans une banque
+2. Si le score de crédit est >= autoApproveMinScore (700) : **approbation automatique**
+3. Si le score de crédit est inférieur au seuil d'approbation automatique : **approbation manuelle par un banquier**
+4. Les banquiers du grade suffisant peuvent approuver/refuser (voir [Jobs](jobs.md))
+
+---
+
+## Personnaliser les Types de Prêts
 
 ```lua
 Config.Loans = {

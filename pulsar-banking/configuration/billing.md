@@ -1,59 +1,59 @@
-# Billing & Invoices Configuration
+# Configuration de la Facturation & des Factures
 
-Configuration file: `config/billing.lua`
-
----
-
-## Overview
-
-The billing system allows players to create, send, and manage invoices. It works standalone (press F5) and is not tied to a specific bank location.
+Fichier de configuration : `config/billing.lua`
 
 ---
 
-## Settings
+## Présentation
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| Enabled | true | Enable/disable the billing system |
-| OpenKey | F5 | Key to open the billing panel |
-| DefaultTaxRate | 0% | Default tax applied to new invoices |
-| MaxLineItems | 10 | Max items per invoice |
-| DueDays | 7 | Default days until invoice is due |
-| MaxPendingInvoices | 10 | Max unpaid invoices per recipient |
-| AutoOverdue | true | Auto-mark invoices as overdue past due date |
-| OverdueCheckInterval | 30 min | How often to check for overdue invoices |
+Le système de facturation permet aux joueurs de créer, envoyer et gérer des factures. Il fonctionne de manière autonome (touche F5) et n'est pas lié à un emplacement bancaire spécifique.
 
 ---
 
-## Job Restrictions
+## Paramètres
 
-By default, **all jobs** can send invoices. To restrict:
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| Enabled | true | Activer/désactiver le système de facturation |
+| OpenKey | F5 | Touche pour ouvrir le panneau de facturation |
+| DefaultTaxRate | 0% | Taxe par défaut appliquée aux nouvelles factures |
+| MaxLineItems | 10 | Nombre maximum de lignes par facture |
+| DueDays | 7 | Jours par défaut avant l'échéance d'une facture |
+| MaxPendingInvoices | 10 | Nombre maximum de factures impayées par destinataire |
+| AutoOverdue | true | Marquer automatiquement les factures comme en souffrance après la date d'échéance |
+| OverdueCheckInterval | 30 min | Fréquence de vérification des factures en souffrance |
+
+---
+
+## Restrictions par Emploi
+
+Par défaut, **tous les emplois** peuvent envoyer des factures. Pour restreindre :
 
 ```lua
--- Only these jobs can create invoices:
+-- Seuls ces emplois peuvent créer des factures :
 AllowedJobs = { 'police', 'ambulance', 'mechanic', 'realestate' },
 
--- All jobs can invoice (default):
+-- Tous les emplois peuvent facturer (par défaut) :
 AllowedJobs = {},
 ```
 
 ---
 
-## Credit Score Impact
+## Impact sur le Score de Crédit
 
-Invoices affect the player's credit score:
+Les factures affectent le score de crédit du joueur :
 
-| Event | Impact |
-|-------|--------|
-| Invoice paid on time | **+5** (max +50 total) |
-| Invoice paid late | **+2** |
-| Invoice overdue/unpaid | **-15** (max -75 total) |
+| Événement | Impact |
+|-----------|--------|
+| Facture payée à temps | **+5** (max +50 au total) |
+| Facture payée en retard | **+2** |
+| Facture en souffrance/impayée | **-15** (max -75 au total) |
 
-These values are configured in `config/loans.lua` under `Config.CreditScore`.
+Ces valeurs sont configurées dans `config/loans.lua` sous `Config.CreditScore`.
 
 ---
 
-## Full Configuration
+## Configuration Complète
 
 ```lua
 Config.Billing = {

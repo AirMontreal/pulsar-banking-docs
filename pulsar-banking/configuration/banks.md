@@ -1,63 +1,63 @@
-# Banks Configuration
+# Configuration des Banques
 
-Configuration file: `config/banks.lua`
-
----
-
-## Overview
-
-Pulsar Banking comes with **8 pre-configured bank locations** across the GTA map. Each bank has its own fees, interest rates, and available services.
+Fichier de configuration : `config/banks.lua`
 
 ---
 
-## Bank List
+## Présentation
 
-| ID | Name | Type | Main Bank |
-|----|------|------|-----------|
-| fleeca_legion | Fleeca Bank - Legion Square | Fleeca | No |
-| fleeca_alta | Fleeca Bank - Alta Street | Fleeca | No |
-| fleeca_burton | Fleeca Bank - Burton | Fleeca | No |
-| fleeca_delperro | Fleeca Bank - Del Perro | Fleeca | No |
-| fleeca_greatocean | Fleeca Bank - Great Ocean Highway | Fleeca | No |
-| fleeca_route68 | Fleeca Bank - Route 68 | Fleeca | No |
-| pacific_standard | Pacific Standard Bank | Pacific | Yes |
-| blaine_county | Blaine County Savings | Blaine | Yes |
+Pulsar Banking est livré avec **8 emplacements bancaires préconfigurés** sur la carte GTA. Chaque banque possède ses propres frais, taux d'intérêt et services disponibles.
 
 ---
 
-## Bank Structure
+## Liste des Banques
 
-Each bank entry supports the following options:
+| ID | Nom | Type | Banque Principale |
+|----|-----|------|------------------|
+| fleeca_legion | Fleeca Bank - Legion Square | Fleeca | Non |
+| fleeca_alta | Fleeca Bank - Alta Street | Fleeca | Non |
+| fleeca_burton | Fleeca Bank - Burton | Fleeca | Non |
+| fleeca_delperro | Fleeca Bank - Del Perro | Fleeca | Non |
+| fleeca_greatocean | Fleeca Bank - Great Ocean Highway | Fleeca | Non |
+| fleeca_route68 | Fleeca Bank - Route 68 | Fleeca | Non |
+| pacific_standard | Pacific Standard Bank | Pacific | Oui |
+| blaine_county | Blaine County Savings | Blaine | Oui |
+
+---
+
+## Structure d'une Banque
+
+Chaque entrée de banque supporte les options suivantes :
 
 ```lua
 ['bank_id'] = {
-    name = 'Bank Name',                           -- Display name
-    bankType = 'fleeca',                           -- Type: 'fleeca', 'pacific', 'blaine'
-    isMainBank = false,                            -- Main banks have different blip styling
-    coords = vector3(x, y, z),                     -- Bank position
-    heading = 340.0,                               -- NPC facing direction
+    name = 'Bank Name',                           -- Nom affiché
+    bankType = 'fleeca',                           -- Type : 'fleeca', 'pacific', 'blaine'
+    isMainBank = false,                            -- Les banques principales ont un style de marqueur différent
+    coords = vector3(x, y, z),                     -- Position de la banque
+    heading = 340.0,                               -- Direction du PNJ
     blip = {
-        sprite = 108,                              -- Blip icon (108 = bank)
-        color = 69,                                -- Blip color (69 = green, 2 = dark green)
-        scale = 0.65,                              -- Blip size
-        label = 'Bank Name',                       -- Blip label on map
+        sprite = 108,                              -- Icône du marqueur (108 = banque)
+        color = 69,                                -- Couleur du marqueur (69 = vert, 2 = vert foncé)
+        scale = 0.65,                              -- Taille du marqueur
+        label = 'Bank Name',                       -- Libellé du marqueur sur la carte
     },
     counter = {
-        coords = vector3(x, y, z),                 -- Interaction point
-        radius = 1.5,                              -- Interaction radius
+        coords = vector3(x, y, z),                 -- Point d'interaction
+        radius = 1.5,                              -- Rayon d'interaction
     },
     ped = {
-        coords = vector4(x, y, z, heading),        -- NPC position + heading
+        coords = vector4(x, y, z, heading),        -- Position du PNJ + orientation
     },
     fees = {
-        deposit = 0.0,                             -- Deposit fee (%)
-        withdrawal = 0.0,                          -- Withdrawal fee (%)
-        transfer = 0.005,                          -- Transfer fee (0.5%)
-        atm = 2.00,                                -- ATM fee ($)
+        deposit = 0.0,                             -- Frais de dépôt (%)
+        withdrawal = 0.0,                          -- Frais de retrait (%)
+        transfer = 0.005,                          -- Frais de virement (0.5%)
+        atm = 2.00,                                -- Frais DAB ($)
     },
     interestRates = {
-        savings = 0.01,                            -- Savings interest (1%)
-        loanBase = 0.05,                           -- Base loan rate (5%)
+        savings = 0.01,                            -- Intérêts épargne (1%)
+        loanBase = 0.05,                           -- Taux de base des prêts (5%)
     },
     services = { 'checking', 'savings', 'loans', 'cards' },
 }
@@ -65,34 +65,34 @@ Each bank entry supports the following options:
 
 ---
 
-## Per-Bank Fees
+## Frais par Banque
 
-| Bank | Transfer Fee | ATM Fee | Savings Rate | Loan Rate |
-|------|-------------|---------|--------------|-----------|
-| Fleeca branches | 0.5% | $2.00 | 1% | 5% |
+| Banque | Frais de virement | Frais DAB | Taux épargne | Taux prêt |
+|--------|------------------|-----------|-------------|-----------|
+| Agences Fleeca | 0.5% | $2.00 | 1% | 5% |
 | Pacific Standard | 0.2% | $0.50 | 2% | 3.5% |
 | Blaine County | 0.8% | $2.00 | 0.5% | 7% |
 
-> Per-bank fees override the global fees from `config/config.lua`.
+> Les frais par banque remplacent les frais globaux définis dans `config/config.lua`.
 
 ---
 
-## Available Services
+## Services Disponibles
 
 | Service | Description |
 |---------|-------------|
-| checking | Checking account creation |
-| savings | Savings account creation |
-| loans | Loan applications |
-| cards | Card ordering (debit/credit) |
+| checking | Ouverture d'un compte courant |
+| savings | Ouverture d'un compte épargne |
+| loans | Demandes de prêt |
+| cards | Commande de cartes (débit/crédit) |
 
-> **Note:** fleeca_route68 and blaine_county do not offer card services by default.
+> **Remarque :** fleeca_route68 et blaine_county ne proposent pas de services de carte par défaut.
 
 ---
 
-## Adding a New Bank
+## Ajouter une Nouvelle Banque
 
-Add a new entry to the `Config.Banks` table:
+Ajoutez une nouvelle entrée dans la table `Config.Banks` :
 
 ```lua
 ['my_custom_bank'] = {
@@ -120,19 +120,19 @@ Add a new entry to the `Config.Banks` table:
 
 ---
 
-## Removing a Bank
+## Supprimer une Banque
 
-Simply delete or comment out the bank entry from `Config.Banks`. The script will only load banks present in the config.
+Supprimez ou commentez simplement l'entrée de la banque dans `Config.Banks`. Le script ne chargera que les banques présentes dans la configuration.
 
 ---
 
-## Blip Colors Reference
+## Référence des Couleurs de Marqueur
 
-| Color ID | Color |
-|----------|-------|
-| 0 | White |
-| 1 | Red |
-| 2 | Dark Green |
-| 3 | Blue |
-| 5 | Yellow |
-| 69 | Green |
+| ID Couleur | Couleur |
+|-----------|---------|
+| 0 | Blanc |
+| 1 | Rouge |
+| 2 | Vert foncé |
+| 3 | Bleu |
+| 5 | Jaune |
+| 69 | Vert |

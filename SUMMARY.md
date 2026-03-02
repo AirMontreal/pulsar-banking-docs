@@ -1,4 +1,4 @@
-# Table of Contents
+# Table des matières
 
 ## Pulsar Banking
 
@@ -7,32 +7,32 @@
 
 ### Configuration
 
-- [General Settings](pulsar-banking/configuration/general.md)
-- [Banks](pulsar-banking/configuration/banks.md)
+- [Paramètres généraux](pulsar-banking/configuration/general.md)
+- [Banques](pulsar-banking/configuration/banks.md)
 - [ATMs](pulsar-banking/configuration/atms.md)
-- [Cards](pulsar-banking/configuration/cards.md)
-- [Loans & Credit Score](pulsar-banking/configuration/loans.md)
-- [Jobs](pulsar-banking/configuration/jobs.md)
-- [Investments & Market](pulsar-banking/configuration/investments.md)
+- [Cartes](pulsar-banking/configuration/cards.md)
+- [Prêts & Score de crédit](pulsar-banking/configuration/loans.md)
+- [Emplois](pulsar-banking/configuration/jobs.md)
+- [Investissements & Marché](pulsar-banking/configuration/investments.md)
 - [Badges](pulsar-banking/configuration/badges.md)
-- [Billing & Invoices](pulsar-banking/configuration/billing.md)
+- [Facturation & Factures](pulsar-banking/configuration/billing.md)
 
-### Features
+### Fonctionnalités
 
-- [Accounts](pulsar-banking/features/accounts.md)
+- [Comptes](pulsar-banking/features/accounts.md)
 - [Transactions](pulsar-banking/features/transactions.md)
-- [Cards](pulsar-banking/features/cards.md)
-- [Loans & Credit](pulsar-banking/features/loans.md)
-- [Investments & Market](pulsar-banking/features/investments.md)
-- [Organizations](pulsar-banking/features/organizations.md)
-- [Admin Panel](pulsar-banking/features/admin.md)
-- [Commands](pulsar-banking/features/commands.md)
+- [Cartes](pulsar-banking/features/cards.md)
+- [Prêts & Crédit](pulsar-banking/features/loans.md)
+- [Investissements & Marché](pulsar-banking/features/investments.md)
+- [Organisations](pulsar-banking/features/organizations.md)
+- [Panneau Admin](pulsar-banking/features/admin.md)
+- [Commandes](pulsar-banking/features/commands.md)
 
-### Developers
+### Développeurs
 
 - [Exports & API](pulsar-banking/features/exports.md)
-- [Events](pulsar-banking/features/events.md)
+- [Événements](pulsar-banking/features/events.md)
 
-### Help
+### Aide
 
-- [FAQ & Troubleshooting](pulsar-banking/faq.md)
+- [FAQ & Dépannage](pulsar-banking/faq.md)

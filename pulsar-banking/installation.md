@@ -1,144 +1,144 @@
 # Installation
 
-Step-by-step guide to install Pulsar Banking on your FiveM server.
+Guide étape par étape pour installer Pulsar Banking sur votre serveur FiveM.
 
 ---
 
-## 1. Requirements
+## 1. Prérequis
 
-Make sure you have the following resources installed and running:
+Assurez-vous que les ressources suivantes sont installées et en cours d'exécution :
 
-| Resource | Link |
-|----------|------|
+| Ressource | Lien |
+|-----------|------|
 | **oxmysql** | [GitHub](https://github.com/overextended/oxmysql) |
 | **ox_lib** | [GitHub](https://github.com/overextended/ox_lib) |
-| **ox_inventory** or **qb-inventory** | Auto-detected |
-| **ox_target** or **qb-target** | Auto-detected |
-| **QBCore** or **ESX** | Set in config |
+| **ox_inventory** ou **qb-inventory** | Auto-détecté |
+| **ox_target** ou **qb-target** | Auto-détecté |
+| **QBCore** ou **ESX** | Défini dans la config |
 
 ---
 
-## 2. Database Setup
+## 2. Base de données
 
-Import the SQL file into your database:
+Importez le fichier SQL dans votre base de données :
 
 ```sql
--- Using HeidiSQL, phpMyAdmin, or your preferred tool:
--- Import the file: sql/install.sql
+-- Via HeidiSQL, phpMyAdmin ou votre outil préféré :
+-- Importez le fichier : sql/install.sql
 ```
 
-This creates all 21 required tables (`pulsar_accounts`, `pulsar_transactions`, `pulsar_loans`, etc.).
+Cela crée les 21 tables requises (`pulsar_accounts`, `pulsar_transactions`, `pulsar_loans`, etc.).
 
-> **Note:** If `Config.Debug = true` in your config, the script will also auto-check and create missing tables on startup.
+> **Note :** Si `Config.Debug = true` dans votre config, le script vérifiera et créera automatiquement les tables manquantes au démarrage.
 
 ---
 
-## 3. Inventory Items
+## 3. Objets d'inventaire
 
 ### ox_inventory
 
-Copy the items from `install/ox_inventory_items.lua` into your `ox_inventory/data/items.lua`:
+Copiez les objets depuis `install/ox_inventory_items.lua` dans votre `ox_inventory/data/items.lua` :
 
 ```lua
 ['debit_card'] = {
-    label = 'Debit Card',
+    label = 'Carte de débit',
     weight = 0,
     stack = false,
     close = true,
-    description = 'A bank debit card',
+    description = 'Une carte de débit bancaire',
 },
 ['credit_card'] = {
-    label = 'Credit Card',
+    label = 'Carte de crédit',
     weight = 0,
     stack = false,
     close = true,
-    description = 'A bank credit card',
+    description = 'Une carte de crédit bancaire',
 },
 ['enterprise_card'] = {
-    label = 'Enterprise Card',
+    label = 'Carte entreprise',
     weight = 0,
     stack = false,
     close = true,
-    description = 'An enterprise bank card',
+    description = 'Une carte bancaire entreprise',
 },
 ```
 
-Then copy the card images from `install/ox_inventory_images/` into your `ox_inventory/web/images/` folder.
+Copiez ensuite les images depuis `install/ox_inventory_images/` vers votre dossier `ox_inventory/web/images/`.
 
 ### qb-inventory
 
-Copy the items from `install/qb_inventory_items.lua` into your `qb-core/shared/items.lua`.
+Copiez les objets depuis `install/qb_inventory_items.lua` dans votre `qb-core/shared/items.lua`.
 
 ---
 
-## 4. Resource Placement
+## 4. Placement de la ressource
 
-1. Place the `Pulsar-Banking` folder in your server's `resources/` directory
-2. Rename it to `pulsar-banking` (lowercase, no spaces) if needed
+1. Placez le dossier `Pulsar-Banking` dans le répertoire `resources/` de votre serveur
+2. Renommez-le en `pulsar-banking` (minuscules, sans espaces) si nécessaire
 
 ---
 
-## 5. Server Configuration
+## 5. Configuration du serveur
 
-Add the following to your `server.cfg`:
+Ajoutez ceci à votre `server.cfg` :
 
 ```cfg
-# Make sure dependencies start first
+# Démarrer les dépendances en premier
 ensure oxmysql
 ensure ox_lib
-ensure ox_inventory  # or qb-inventory
+ensure ox_inventory  # ou qb-inventory
 
-# Start Pulsar Banking
+# Démarrer Pulsar Banking
 ensure pulsar-banking
 ```
 
-> **Important:** `pulsar-banking` must start **after** its dependencies.
+> **Important :** `pulsar-banking` doit démarrer **après** ses dépendances.
 
 ---
 
-## 6. Framework Configuration
+## 6. Configuration du framework
 
-Open `config/config.lua` and set your framework:
+Ouvrez `config/config.lua` et définissez votre framework :
 
 ```lua
--- For QBCore servers:
+-- Pour les serveurs QBCore :
 Config.Framework = 'qbcore'
 
--- For ESX servers:
+-- Pour les serveurs ESX :
 Config.Framework = 'esx'
 ```
 
-The script will auto-detect your target system (`ox_target` / `qb-target`) and inventory system (`ox_inventory` / `qb-inventory`).
+Le script détectera automatiquement votre système de target (`ox_target` / `qb-target`) et d'inventaire (`ox_inventory` / `qb-inventory`).
 
 ---
 
-## 7. First Start
+## 7. Premier démarrage
 
-1. Start your server
-2. Check the server console for any errors
-3. Join the server and approach a bank or ATM
-4. The banking UI should open when you interact
-
----
-
-## 8. Post-Installation
-
-After confirming the script works:
-
-- Review all files in `config/` to customize settings to your server
-- Set up [Discord Webhooks](configuration/general.md#notifications--discord) for logging
-- Configure [bank locations](configuration/banks.md) if needed
-- Set up the [banker job](configuration/jobs.md) for your players
+1. Démarrez votre serveur
+2. Vérifiez la console serveur pour détecter d'éventuelles erreurs
+3. Rejoignez le serveur et approchez-vous d'une banque ou d'un ATM
+4. L'interface bancaire devrait s'ouvrir à l'interaction
 
 ---
 
-## Updating
+## 8. Post-installation
 
-When updating to a new version:
+Après avoir confirmé que le script fonctionne :
 
-1. Back up your current `config/` folder
-2. Replace all files except your `config/` folder
-3. Check the changelog for any new config options to add
-4. Restart the resource
+- Parcourez tous les fichiers dans `config/` pour personnaliser les paramètres
+- Configurez les [Webhooks Discord](configuration/general.md#notifications--discord) pour la journalisation
+- Configurez les [emplacements des banques](configuration/banks.md) si nécessaire
+- Configurez le [job de banquier](configuration/jobs.md) pour vos joueurs
 
-> **Never** delete or replace your `config/` files during an update — they contain your custom settings.
+---
+
+## Mise à jour
+
+Lors d'une mise à jour vers une nouvelle version :
+
+1. Sauvegardez votre dossier `config/` actuel
+2. Remplacez tous les fichiers sauf votre dossier `config/`
+3. Consultez le changelog pour les nouvelles options de config à ajouter
+4. Redémarrez la ressource
+
+> **Ne jamais** supprimer ou remplacer vos fichiers `config/` lors d'une mise à jour — ils contiennent vos paramètres personnalisés.

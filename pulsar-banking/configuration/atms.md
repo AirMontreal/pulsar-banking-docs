@@ -1,18 +1,18 @@
-# ATMs Configuration
+# Configuration des DAB
 
-Configuration file: `config/atms.lua`
-
----
-
-## Overview
-
-ATMs are automatically detected in the game world based on prop models. You can also add custom ATM locations manually.
+Fichier de configuration : `config/atms.lua`
 
 ---
 
-## ATM Models
+## Présentation
 
-The following GTA props are recognized as ATMs:
+Les distributeurs automatiques de billets (DAB) sont détectés automatiquement dans le monde du jeu en fonction des modèles de props. Vous pouvez également ajouter des emplacements de DAB personnalisés manuellement.
+
+---
+
+## Modèles de DAB
+
+Les props GTA suivants sont reconnus comme des DAB :
 
 ```lua
 Config.ATMModels = {
@@ -23,31 +23,31 @@ Config.ATMModels = {
 }
 ```
 
-> These cover all default ATM models in the GTA map. If you add custom ATM props via MLO, add their model name here.
+> Ces modèles couvrent tous les DAB par défaut présents sur la carte GTA. Si vous ajoutez des props de DAB personnalisés via un MLO, ajoutez leur nom de modèle ici.
 
 ---
 
-## ATM Settings
+## Paramètres des DAB
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| Config.ATMFee | $2.00 | Fee per ATM transaction |
-| Config.ATMDailyLimit | $50,000 | Max daily ATM withdrawals |
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| Config.ATMFee | $2.00 | Frais par transaction au DAB |
+| Config.ATMDailyLimit | $50,000 | Retraits journaliers maximum au DAB |
 
-Additional ATM limits from `config/config.lua`:
+Limites supplémentaires des DAB depuis `config/config.lua` :
 
-| Option | Default |
-|--------|---------|
-| ATMMaxWithdraw | $25,000 per transaction |
-| ATMMaxDeposit | $50,000 per transaction |
+| Option | Par défaut |
+|--------|-----------|
+| ATMMaxWithdraw | $25,000 par transaction |
+| ATMMaxDeposit | $50,000 par transaction |
 | ATMDailyWithdrawLimit | $50,000 |
 | ATMDailyDepositLimit | $100,000 |
 
 ---
 
-## Custom ATM Locations
+## Emplacements de DAB Personnalisés
 
-Add coordinates to place ATMs at custom positions:
+Ajoutez des coordonnées pour placer des DAB à des positions personnalisées :
 
 ```lua
 Config.CustomATMLocations = {
@@ -56,28 +56,28 @@ Config.CustomATMLocations = {
 }
 ```
 
-> Custom locations use the default ATM interaction without requiring an actual prop model to be present.
+> Les emplacements personnalisés utilisent l'interaction DAB par défaut sans nécessiter la présence d'un prop réel.
 
 ---
 
-## ATM Blips
+## Marqueurs de DAB
 
-By default, ATM blips are **disabled** on the map:
+Par défaut, les marqueurs de DAB sont **désactivés** sur la carte :
 
 ```lua
--- In config/config.lua
+-- Dans config/config.lua
 Config.ShowATMBlips = false
 ```
 
-Set to true to show ATM locations on the minimap.
+Définissez cette valeur à true pour afficher les emplacements des DAB sur la mini-carte.
 
 ---
 
-## ATM Interaction
+## Interaction avec les DAB
 
-| Option | Value | File |
-|--------|-------|------|
-| Interact distance | 1.5 | config/config.lua |
-| Draw distance | 10.0 | config/config.lua |
-| Use target | true | config/config.lua |
-| Available 24/7 | Yes | Even when bank hours are enabled |
+| Option | Valeur | Fichier |
+|--------|--------|---------|
+| Distance d'interaction | 1.5 | config/config.lua |
+| Distance d'affichage | 10.0 | config/config.lua |
+| Utiliser le système de cible | true | config/config.lua |
+| Disponible 24h/24 | Oui | Même lorsque les horaires bancaires sont activés |

@@ -1,54 +1,54 @@
 # Pulsar Banking
 
-**Advanced Banking System for FiveM — QBCore & ESX**
+**Système bancaire avancé pour FiveM — QBCore & ESX**
 
-Pulsar Banking is a complete, modern banking solution for your FiveM server. It provides a realistic and immersive banking experience with a beautiful React-based UI, multi-framework support, and a deep feature set.
-
----
-
-## Key Features
-
-- **Multi-Framework** — Supports QBCore and ESX (target & inventory auto-detected)
-- **Full Banking System** — Checking, savings, joint, and organization accounts
-- **Card System** — Debit, credit, and enterprise cards with physical items
-- **Loan System** — Personal and business loans with credit scoring
-- **Investment Market** — Real-time stocks and crypto with live prices
-- **Organization Accounts** — Role-based access, payroll, and member management
-- **Invoice System** — Create, send, and manage invoices between players
-- **Savings Goals** — Set and track financial goals
-- **Smart Money Rules** — Auto-transfers, round-up savings
-- **Achievement System** — 15+ badges to reward player activity
-- **Admin Panel** — Freeze accounts, audit logs, Discord webhooks
-- **Multi-Language** — 8 languages included (EN, FR, ES, DE, IT, PT, NL, TR)
-- **Modern UI** — React 18 + Tailwind CSS + Framer Motion
+Pulsar Banking est une solution bancaire complète et moderne pour votre serveur FiveM. Elle offre une expérience bancaire réaliste et immersive avec une interface React soignée, un support multi-framework et un ensemble de fonctionnalités approfondies.
 
 ---
 
-## Requirements
+## Fonctionnalités principales
 
-| Dependency | Required |
-|------------|----------|
-| [oxmysql](https://github.com/overextended/oxmysql) | Yes |
-| [ox_lib](https://github.com/overextended/ox_lib) | Yes |
-| [ox_inventory](https://github.com/overextended/ox_inventory) or [qb-inventory](https://github.com/qbcore-framework/qb-inventory) | Yes (auto-detected) |
-| [ox_target](https://github.com/overextended/ox_target) or [qb-target](https://github.com/qbcore-framework/qb-target) | Yes (auto-detected) |
-| QBCore or ESX | Yes (set in config) |
+- **Multi-Framework** — Supporte QBCore et ESX (détection automatique)
+- **Système bancaire complet** — Comptes courants, épargne, joints et d'organisation
+- **Système de cartes** — Cartes de débit, crédit et entreprise sous forme d'objets physiques
+- **Système de prêts** — Prêts personnels et professionnels avec score de crédit
+- **Marché d'investissement** — Actions et cryptos en temps réel
+- **Comptes d'organisation** — Accès par rôle, paie et gestion des membres
+- **Système de facturation** — Créer, envoyer et gérer des factures entre joueurs
+- **Objectifs d'épargne** — Définir et suivre des objectifs financiers
+- **Règles intelligentes** — Virements automatiques, arrondi à l'épargne
+- **Système de badges** — Plus de 15 badges pour récompenser l'activité
+- **Panneau admin** — Geler des comptes, journaux d'audit, webhooks Discord
+- **Multi-langue** — 8 langues incluses (EN, FR, ES, DE, IT, PT, NL, TR)
+- **Interface moderne** — React 18 + Tailwind CSS + Framer Motion
 
 ---
 
-## Quick Start
+## Prérequis
 
-1. Import `sql/install.sql` into your database
-2. Add inventory items from `install/` folder
-3. Place the resource in your `resources/` folder
-4. Add `ensure pulsar-banking` to your `server.cfg`
-5. Configure `config/config.lua` to your needs
-6. Restart your server
+| Dépendance | Requis |
+|------------|--------|
+| [oxmysql](https://github.com/overextended/oxmysql) | Oui |
+| [ox_lib](https://github.com/overextended/ox_lib) | Oui |
+| [ox_inventory](https://github.com/overextended/ox_inventory) ou [qb-inventory](https://github.com/qbcore-framework/qb-inventory) | Oui (auto-détecté) |
+| [ox_target](https://github.com/overextended/ox_target) ou [qb-target](https://github.com/qbcore-framework/qb-target) | Oui (auto-détecté) |
+| QBCore ou ESX | Oui (défini dans la config) |
 
-See the full [Installation Guide](installation.md) for details.
+---
+
+## Démarrage rapide
+
+1. Importez `sql/install.sql` dans votre base de données
+2. Ajoutez les objets d'inventaire depuis le dossier `install/`
+3. Placez la ressource dans votre dossier `resources/`
+4. Ajoutez `ensure pulsar-banking` à votre `server.cfg`
+5. Configurez `config/config.lua` selon vos besoins
+6. Redémarrez votre serveur
+
+Consultez le [Guide d'installation](installation.md) pour les détails complets.
 
 ---
 
 ## Support
 
-For support, open a ticket on our Discord server or contact us via Tebex.
+Pour obtenir de l'aide, ouvrez un ticket sur notre serveur Discord ou contactez-nous via Tebex.

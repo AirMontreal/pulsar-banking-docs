@@ -1,71 +1,71 @@
-# Loans & Credit
+# Prêts & Crédit
 
 ---
 
-## How Loans Work
+## Fonctionnement des Prêts
 
-1. **Apply** — Player submits a loan application at a bank
-2. **Review** — Loan is auto-approved (score 700+) or requires banker approval
-3. **Disbursement** — Approved amount is deposited into the player's account
-4. **Repayment** — Player makes payments before the term ends
-5. **Completion** — Loan marked as paid, credit score improves
+1. **Demande** — Le joueur soumet une demande de prêt dans une banque
+2. **Examen** — Le prêt est approuvé automatiquement (score 700+) ou nécessite l'approbation d'un banquier
+3. **Versement** — Le montant approuvé est déposé sur le compte du joueur
+4. **Remboursement** — Le joueur effectue des paiements avant la fin du terme
+5. **Clôture** — Le prêt est marqué comme remboursé, le score de crédit s'améliore
 
 ---
 
-## Loan Types
+## Types de Prêts
 
-### Personal Loan
+### Prêt Personnel
 - $1,000 - $100,000
-- 7 to 90 day terms
-- Min credit score: 400
-- Up to 2 active personal loans
+- Durée de 7 à 90 jours
+- Score de crédit minimum : 400
+- Jusqu'à 2 prêts personnels actifs
 
-### Business Loan
+### Prêt Professionnel
 - $1,000 - $250,000
-- 14 to 180 day terms
-- Min credit score: 550
-- Must have a job (not `unemployed`)
-- 1 active business loan max
+- Durée de 14 à 180 jours
+- Score de crédit minimum : 550
+- Doit avoir un emploi (pas `unemployed`)
+- 1 prêt professionnel actif maximum
 
 ---
 
-## Credit Score
+## Score de Crédit
 
-Every player starts with a credit score of **500** (range: 300 - 850).
+Chaque joueur démarre avec un score de crédit de **500** (plage : 300 - 850).
 
-### How to Improve
+### Comment l'Améliorer
 | Action | Points |
 |--------|--------|
-| Repay a loan on time | +30 |
-| Account age (per cycle) | +5 (max +50) |
-| Pay invoice on time | +5 (max +50) |
+| Rembourser un prêt à temps | +30 |
+| Ancienneté du compte (par cycle) | +5 (max +50) |
+| Payer une facture à temps | +5 (max +50) |
 
-### What Hurts Your Score
+### Ce Qui Nuit à Votre Score
 | Action | Points |
 |--------|--------|
-| Loan default | -150 |
-| Late payment | -25 |
-| Overdue invoice | -15 (max -75) |
+| Défaut de prêt | -150 |
+| Paiement en retard | -25 |
+| Facture en souffrance | -15 (max -75) |
 
 ---
 
-## Overdue Loans
+## Prêts en Souffrance
 
-| Stage | What Happens |
-|-------|-------------|
-| Due date passed | 24-hour grace period begins |
-| After grace period | 2% penalty rate applied |
-| 5 missed payments | Loan defaults, -150 credit score |
+| Étape | Ce qui se passe |
+|-------|----------------|
+| Date d'échéance dépassée | Période de grâce de 24 heures commence |
+| Après la période de grâce | Taux de pénalité de 2% appliqué |
+| 5 paiements manqués | Défaut de prêt, -150 points de crédit |
 
 ---
 
-## Banker Approval
+## Approbation par un Banquier
 
-Loans that don't qualify for auto-approval need a banker:
+Les prêts ne répondant pas aux critères d'approbation automatique nécessitent un banquier :
 
-| Grade | Max Approval |
-|-------|-------------|
-| Teller (0) | Cannot approve |
+| Grade | Approbation maximale |
+|-------|---------------------|
+| Teller (0) | Ne peut pas approuver |
 | Associate (1) | $25,000 |
 | Manager (2) | $100,000 |
 | Director (3) | $500,000 |

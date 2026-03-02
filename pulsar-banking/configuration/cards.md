@@ -1,83 +1,83 @@
-# Cards Configuration
+# Configuration des Cartes
 
-Configuration file: `config/cards.lua`
-
----
-
-## Overview
-
-Pulsar Banking includes 3 card types that function as physical inventory items. Cards can be ordered from any bank that offers the cards service.
+Fichier de configuration : `config/cards.lua`
 
 ---
 
-## Card Types
+## Présentation
 
-### Debit Card
+Pulsar Banking inclut 3 types de cartes qui fonctionnent comme des objets d'inventaire physiques. Les cartes peuvent être commandées dans n'importe quelle banque proposant le service de cartes.
 
-| Option | Value |
-|--------|-------|
-| Item Name | debit_card |
-| Daily Limit | $10,000 |
-| Requires Credit Score | No |
-| Monthly Fee | $0 |
-| Expiry | 3 years |
+---
 
-### Credit Card
+## Types de Cartes
 
-| Option | Value |
-|--------|-------|
-| Item Name | credit_card |
-| Daily Limit | $15,000 |
-| Requires Credit Score | Yes (minimum 600) |
-| Monthly Fee | $100 |
-| Expiry | 2 years |
-| Interest Rate | 18% |
-| Billing Cycle | 30 days |
+### Carte de Débit
 
-**Credit Limits by Score:**
+| Option | Valeur |
+|--------|--------|
+| Nom de l'objet | debit_card |
+| Limite journalière | $10,000 |
+| Score de crédit requis | Non |
+| Frais mensuels | $0 |
+| Expiration | 3 ans |
 
-| Credit Score | Limit |
-|--------------|-------|
+### Carte de Crédit
+
+| Option | Valeur |
+|--------|--------|
+| Nom de l'objet | credit_card |
+| Limite journalière | $15,000 |
+| Score de crédit requis | Oui (minimum 600) |
+| Frais mensuels | $100 |
+| Expiration | 2 ans |
+| Taux d'intérêt | 18% |
+| Cycle de facturation | 30 jours |
+
+**Limites de crédit selon le score :**
+
+| Score de crédit | Limite |
+|----------------|--------|
 | 500 - 599 | $5,000 |
 | 600 - 699 | $15,000 |
 | 700 - 799 | $50,000 |
 | 800 - 850 | $100,000 |
 
-### Enterprise Card
+### Carte Entreprise
 
-| Option | Value |
-|--------|-------|
-| Item Name | enterprise_card |
-| Daily Limit | $25,000 |
-| Requires Credit Score | No |
-| Monthly Fee | $0 |
-| Expiry | 3 years |
-| PIN Length | 5 digits |
+| Option | Valeur |
+|--------|--------|
+| Nom de l'objet | enterprise_card |
+| Limite journalière | $25,000 |
+| Score de crédit requis | Non |
+| Frais mensuels | $0 |
+| Expiration | 3 ans |
+| Longueur du PIN | 5 chiffres |
 
-> Enterprise cards are linked to organization accounts.
-
----
-
-## General Settings
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| Config.CardNumberPrefix | 4532 | Prefix for generated card numbers |
-| Config.BlockCardOnItemRemove | true | Block card when item is removed from inventory |
+> Les cartes entreprise sont liées aux comptes d'organisation.
 
 ---
 
-## Customizing a Card Type
+## Paramètres Généraux
+
+| Option | Par défaut | Description |
+|--------|-----------|-------------|
+| Config.CardNumberPrefix | 4532 | Préfixe pour les numéros de carte générés |
+| Config.BlockCardOnItemRemove | true | Bloque la carte lorsque l'objet est retiré de l'inventaire |
+
+---
+
+## Personnaliser un Type de Carte
 
 ```lua
 Config.Cards = {
     debit = {
         name = 'Debit Card',
-        itemName = 'debit_card',        -- Must match inventory item name
+        itemName = 'debit_card',        -- Doit correspondre au nom de l'objet dans l'inventaire
         dailyLimit = 10000,
         requiresCreditScore = false,
         minCreditScore = 0,
-        fee = 0.00,                     -- Monthly fee
+        fee = 0.00,                     -- Frais mensuels
         expiryYears = 3,
     },
 }
@@ -85,8 +85,8 @@ Config.Cards = {
 
 ---
 
-## Adding a New Card Type
+## Ajouter un Nouveau Type de Carte
 
-1. Add the card definition in `config/cards.lua`
-2. Add the corresponding item to your inventory system (ox_inventory or qb-inventory)
-3. Add the card image to your inventory's image folder
+1. Ajoutez la définition de la carte dans `config/cards.lua`
+2. Ajoutez l'objet correspondant à votre système d'inventaire (ox_inventory ou qb-inventory)
+3. Ajoutez l'image de la carte dans le dossier d'images de votre inventaire

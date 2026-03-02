@@ -1,64 +1,64 @@
-# Badges Configuration
+# Configuration des Badges
 
-Configuration file: `config/badges.lua`
-
----
-
-## Overview
-
-Badges are achievements that players earn by using banking features. They serve as milestones and encourage feature exploration.
+Fichier de configuration : `config/badges.lua`
 
 ---
 
-## Badge List
+## Présentation
 
-### Basics
-
-| Badge | Description |
-|-------|-------------|
-| First Deposit | Make your first deposit |
-| First Transfer | Complete your first transfer |
-| First Withdrawal | Make your first withdrawal |
-
-### Savings
-
-| Badge | Description |
-|-------|-------------|
-| Bronze Saver | Save $1,000 across all accounts |
-| Silver Saver | Save $10,000 across all accounts |
-| Gold Saver | Save $100,000 across all accounts |
-| Millionaire | Have a total balance over $1,000,000 |
-
-### Investments
-
-| Badge | Description |
-|-------|-------------|
-| Rookie Investor | Make your first market trade |
-| Pro Investor | Complete 10 market trades |
-| Market Whale | Complete 100 market trades |
-
-### Loans
-
-| Badge | Description |
-|-------|-------------|
-| Perfect Credit | Reach a credit score above 800 |
-| Loan Master | Repay 5 loans without being late |
-| Early Bird | Repay a loan before its term ends |
-
-### Other
-
-| Badge | Description |
-|-------|-------------|
-| Diversified | Own 3 or more different account types |
-| Goal Achiever | Complete a savings goal |
-| Smart Money | Set up your first auto-rule |
+Les badges sont des succès que les joueurs obtiennent en utilisant les fonctionnalités bancaires. Ils servent de jalons et encouragent l'exploration des fonctionnalités.
 
 ---
 
-## Badge Categories
+## Liste des Badges
 
-| Category | Badges |
-|----------|--------|
+### Les Essentiels
+
+| Badge | Description |
+|-------|-------------|
+| First Deposit | Effectuez votre premier dépôt |
+| First Transfer | Complétez votre premier virement |
+| First Withdrawal | Effectuez votre premier retrait |
+
+### Épargne
+
+| Badge | Description |
+|-------|-------------|
+| Bronze Saver | Économisez $1,000 au total sur tous vos comptes |
+| Silver Saver | Économisez $10,000 au total sur tous vos comptes |
+| Gold Saver | Économisez $100,000 au total sur tous vos comptes |
+| Millionaire | Avoir un solde total supérieur à $1,000,000 |
+
+### Investissements
+
+| Badge | Description |
+|-------|-------------|
+| Rookie Investor | Effectuez votre première transaction sur le marché |
+| Pro Investor | Complétez 10 transactions sur le marché |
+| Market Whale | Complétez 100 transactions sur le marché |
+
+### Prêts
+
+| Badge | Description |
+|-------|-------------|
+| Perfect Credit | Atteignez un score de crédit supérieur à 800 |
+| Loan Master | Remboursez 5 prêts sans retard |
+| Early Bird | Remboursez un prêt avant la fin de son terme |
+
+### Autres
+
+| Badge | Description |
+|-------|-------------|
+| Diversified | Posséder 3 types de comptes différents ou plus |
+| Goal Achiever | Atteindre un objectif d'épargne |
+| Smart Money | Configurer votre première règle automatique |
+
+---
+
+## Catégories de Badges
+
+| Catégorie | Badges |
+|-----------|--------|
 | basics | First Deposit, First Transfer, First Withdrawal |
 | savings | Bronze/Silver/Gold Saver, Millionaire |
 | investments | Rookie/Pro Investor, Market Whale |
@@ -69,17 +69,17 @@ Badges are achievements that players earn by using banking features. They serve 
 
 ---
 
-## Adding a Custom Badge
+## Ajouter un Badge Personnalisé
 
 ```lua
 Config.Badges = {
     ['my_badge'] = {
         name = 'My Badge',
-        description = 'Description of how to earn it',
-        icon = 'my_icon',       -- Icon identifier used in NUI
-        category = 'basics',    -- Category for grouping
+        description = 'Description de la condition pour l\'obtenir',
+        icon = 'my_icon',       -- Identifiant de l'icône utilisé dans le NUI
+        category = 'basics',    -- Catégorie pour le regroupement
     },
 }
 ```
 
-> **Note:** Custom badges require server-side logic to trigger them. The badge definition in config only defines the display — the awarding logic is in the server code.
+> **Remarque :** Les badges personnalisés nécessitent une logique côté serveur pour les déclencher. La définition du badge dans la configuration ne définit que l'affichage — la logique d'attribution se trouve dans le code serveur.

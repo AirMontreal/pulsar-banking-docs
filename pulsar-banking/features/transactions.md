@@ -2,88 +2,88 @@
 
 ---
 
-## Transaction Types
+## Types de Transactions
 
 | Type | Description |
 |------|-------------|
-| **Deposit** | Add cash to your account |
-| **Withdrawal** | Take cash from your account |
-| **Transfer** | Send money to another account |
-| **Wire Transfer** | Transfer to a different bank (higher fee) |
-| **Loan Payment** | Automatic or manual loan repayment |
-| **Interest** | Interest earned on savings |
-| **Fee** | Maintenance fees, ATM fees, etc. |
-| **Invoice** | Payment received or sent via billing |
+| **Deposit** | Ajouter de l'argent liquide sur votre compte |
+| **Withdrawal** | Retirer de l'argent liquide de votre compte |
+| **Transfer** | Envoyer de l'argent vers un autre compte |
+| **Wire Transfer** | Virement vers une autre banque (frais plus élevés) |
+| **Loan Payment** | Remboursement de prêt automatique ou manuel |
+| **Interest** | Intérêts gagnés sur l'épargne |
+| **Fee** | Frais de tenue de compte, frais de DAB, etc. |
+| **Invoice** | Paiement reçu ou envoyé via la facturation |
 
 ---
 
-## Deposits
+## Dépôts
 
-- Available at bank counters and ATMs
-- ATM deposit limit: $50,000 per transaction
-- ATM daily deposit limit: $100,000
-- No deposit fee by default
-
----
-
-## Withdrawals
-
-- Available at bank counters and ATMs
-- ATM withdrawal limit: $25,000 per transaction
-- ATM daily withdrawal limit: $50,000
-- Bank counter daily limit: $50,000
+- Disponibles aux guichets de banque et aux DAB
+- Limite de dépôt au DAB : $50,000 par transaction
+- Limite journalière de dépôt au DAB : $100,000
+- Aucun frais de dépôt par défaut
 
 ---
 
-## Transfers
+## Retraits
 
-- Transfer between your own accounts or to other players
-- Search by account number or player name
-- Quick transfer amounts: $100, $500, $1K, $5K, $10K, $50K
-- 15-second cooldown between transfers
-- Daily transfer limit: $100,000
-- Confirmation required for transfers above $50,000
-
-### Saved Contacts
-
-Save frequent recipients for quick transfers. Up to 20 saved contacts.
+- Disponibles aux guichets de banque et aux DAB
+- Limite de retrait au DAB : $25,000 par transaction
+- Limite journalière de retrait au DAB : $50,000
+- Limite journalière au guichet : $50,000
 
 ---
 
-## Transaction History
+## Virements
 
-- Full history accessible in the banking UI
-- Filter by type, date, and amount
-- Search transactions by description
-- Categorized automatically (deposit, transfer, fee, etc.)
+- Virement entre vos propres comptes ou vers d'autres joueurs
+- Recherche par numéro de compte ou nom de joueur
+- Montants rapides : $100, $500, $1K, $5K, $10K, $50K
+- Délai de 15 secondes entre les virements
+- Limite journalière de virement : $100,000
+- Confirmation requise pour les virements supérieurs à $50,000
 
----
+### Contacts Sauvegardés
 
-## Cooldowns
-
-| Action | Cooldown |
-|--------|----------|
-| Transfer | 15 seconds |
-| Withdrawal | 10 seconds |
-| Deposit | 10 seconds |
+Sauvegardez les destinataires fréquents pour des virements rapides. Jusqu'à 20 contacts sauvegardés.
 
 ---
 
-## Rate Limits
+## Historique des Transactions
 
-- Maximum **60 transactions per hour** per player
-- Configurable in `Config.Security.MaxTransactionsPerHour`
+- Historique complet accessible dans l'interface bancaire
+- Filtrage par type, date et montant
+- Recherche de transactions par description
+- Catégorisation automatique (dépôt, virement, frais, etc.)
+
+---
+
+## Délais de Recharge
+
+| Action | Délai |
+|--------|-------|
+| Virement | 15 secondes |
+| Retrait | 10 secondes |
+| Dépôt | 10 secondes |
+
+---
+
+## Limites de Débit
+
+- Maximum **60 transactions par heure** par joueur
+- Configurable dans `Config.Security.MaxTransactionsPerHour`
 
 ---
 
 ## Notifications
 
-Players receive in-game notifications for:
+Les joueurs reçoivent des notifications en jeu pour :
 
-- Deposits received
-- Withdrawals completed
-- Incoming transfers
-- Interest earned
-- Loan payments due
-- Fees charged
-- Low balance warnings (below $500)
+- Dépôts reçus
+- Retraits effectués
+- Virements entrants
+- Intérêts gagnés
+- Paiements de prêt à venir
+- Frais prélevés
+- Avertissements de solde bas (en dessous de $500)

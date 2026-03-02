@@ -1,69 +1,69 @@
-# Cards
+# Cartes
 
 ---
 
-## Overview
+## Présentation
 
-Cards are physical inventory items that players can order from bank counters. Each card is linked to a specific bank account.
-
----
-
-## Card Types
-
-### Debit Card
-- Free to order
-- Linked to checking/savings account
-- $10,000 daily limit
-- No credit score requirement
-
-### Credit Card
-- $100/month fee
-- Requires credit score of 600+
-- Credit limit based on score (up to $100,000)
-- 18% interest rate on credit balance
-- 30-day billing cycle
-
-### Enterprise Card
-- Free to order
-- Linked to organization account
-- $25,000 daily limit
-- 5-digit PIN
+Les cartes sont des objets d'inventaire physiques que les joueurs peuvent commander aux guichets de banque. Chaque carte est liée à un compte bancaire spécifique.
 
 ---
 
-## Ordering a Card
+## Types de Cartes
 
-1. Visit a bank that offers the `cards` service
-2. Open the banking UI
-3. Navigate to the Cards section
-4. Select the card type
-5. The card item will be added to your inventory
+### Carte de Débit
+- Gratuite à la commande
+- Liée à un compte courant ou épargne
+- Limite journalière de $10,000
+- Aucune condition de score de crédit
+
+### Carte de Crédit
+- Frais de $100/mois
+- Nécessite un score de crédit de 600 ou plus
+- Limite de crédit basée sur le score (jusqu'à $100,000)
+- Taux d'intérêt de 18% sur le solde créditeur
+- Cycle de facturation de 30 jours
+
+### Carte Entreprise
+- Gratuite à la commande
+- Liée à un compte d'organisation
+- Limite journalière de $25,000
+- Code PIN à 5 chiffres
 
 ---
 
-## Card Security
+## Commander une Carte
 
-- Cards have unique generated numbers (prefix: `4532`)
-- PIN protection for all card transactions
-- Cards expire after their configured duration (2-3 years)
-- If a card item is removed from inventory, the card is blocked (`Config.BlockCardOnItemRemove = true`)
+1. Rendez-vous dans une banque proposant le service `cards`
+2. Ouvrez l'interface bancaire
+3. Naviguez vers la section Cartes
+4. Sélectionnez le type de carte
+5. L'objet carte sera ajouté à votre inventaire
 
 ---
 
-## Credit Card Details
+## Sécurité des Cartes
 
-### Credit Limits by Score
+- Les cartes possèdent des numéros générés uniques (préfixe : `4532`)
+- Protection par code PIN pour toutes les transactions par carte
+- Les cartes expirent après leur durée configurée (2 à 3 ans)
+- Si un objet carte est retiré de l'inventaire, la carte est bloquée (`Config.BlockCardOnItemRemove = true`)
 
-| Score Range | Credit Limit |
-|------------|--------------|
+---
+
+## Détails de la Carte de Crédit
+
+### Limites de Crédit selon le Score
+
+| Plage de Score | Limite de Crédit |
+|---------------|-----------------|
 | 500 - 599 | $5,000 |
 | 600 - 699 | $15,000 |
 | 700 - 799 | $50,000 |
 | 800 - 850 | $100,000 |
 
-### Billing
+### Facturation
 
-- Credit balance accrues 18% interest
-- Billing cycle: 30 days
-- Payment due at end of each cycle
-- Late payments affect credit score (-25)
+- Le solde créditeur accumule 18% d'intérêts
+- Cycle de facturation : 30 jours
+- Paiement dû à la fin de chaque cycle
+- Les paiements en retard affectent le score de crédit (-25)

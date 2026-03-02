@@ -1,32 +1,32 @@
-# Commands
+# Commandes
 
 ---
 
-## Player Commands
+## Commandes des Joueurs
 
-| Command | Description |
-|---------|-------------|
-| `/openbilling` | Open the billing/invoices panel |
+| Commande | Description |
+|----------|-------------|
+| `/openbilling` | Ouvrir le panneau de facturation/factures |
 
-> The billing panel can also be opened with the **F5** key (configurable via `Config.Billing.OpenKey`).
+> Le panneau de facturation peut également être ouvert avec la touche **F5** (configurable via `Config.Billing.OpenKey`).
 
 ---
 
-## Admin Commands
+## Commandes Administrateur
 
-All admin commands require `Config.AdminPermission` (`'admin'`) **and** your license to be in `Config.AdminLicenses`.
+Toutes les commandes administrateur nécessitent `Config.AdminPermission` (`'admin'`) **et** que votre licence soit dans `Config.AdminLicenses`.
 
-Admin commands have a **5-second cooldown** between uses.
+Les commandes administrateur ont un **délai de recharge de 5 secondes** entre les utilisations.
 
 ### /bankadmin
 
-| Usage | Description |
-|-------|-------------|
-| `/bankadmin give [citizenid] [amount]` | Deposit money into a player's primary checking account |
-| `/bankadmin freeze [account_number]` | Freeze an account (blocks all transactions) |
-| `/bankadmin unfreeze [account_number]` | Unfreeze a previously frozen account |
+| Utilisation | Description |
+|-------------|-------------|
+| `/bankadmin give [citizenid] [amount]` | Déposer de l'argent sur le compte courant principal d'un joueur |
+| `/bankadmin freeze [account_number]` | Geler un compte (bloque toutes les transactions) |
+| `/bankadmin unfreeze [account_number]` | Dégeler un compte précédemment gelé |
 
-**Examples:**
+**Exemples :**
 
 ```
 /bankadmin give ABC12345 50000
@@ -34,4 +34,4 @@ Admin commands have a **5-second cooldown** between uses.
 /bankadmin unfreeze PB-1234567
 ```
 
-> All admin actions are logged in the audit log and optionally sent to Discord via webhook.
+> Toutes les actions administratives sont enregistrées dans le journal d'audit et éventuellement envoyées sur Discord via webhook.

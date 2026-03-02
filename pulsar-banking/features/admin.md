@@ -1,53 +1,53 @@
-# Admin Panel
+# Panneau d'Administration
 
 ---
 
-## Overview
+## Présentation
 
-Server administrators can manage player accounts, freeze suspicious activity, and monitor transactions through admin commands and Discord logging.
+Les administrateurs du serveur peuvent gérer les comptes des joueurs, geler les activités suspectes et surveiller les transactions via des commandes d'administration et la journalisation Discord.
 
 ---
 
-## Admin Access
+## Accès Administrateur
 
-Admin access is controlled by:
+L'accès administrateur est contrôlé par :
 
 ```lua
-Config.AdminPermission = 'admin'      -- Framework permission level
+Config.AdminPermission = 'admin'      -- Niveau de permission du framework
 Config.AdminLicenses = {
-    'your_license_hash_here',          -- Rockstar license hash
+    'your_license_hash_here',          -- Hash de licence Rockstar
 }
 ```
 
-Both conditions are checked — you need the permission level **and** your license must be whitelisted.
+Les deux conditions sont vérifiées — vous avez besoin du niveau de permission **et** votre licence doit être sur liste blanche.
 
 ---
 
-## Admin Commands
+## Commandes Administrateur
 
-All commands have a 5-second cooldown to prevent spam.
+Toutes les commandes ont un délai de recharge de 5 secondes pour éviter le spam.
 
 ### `/bankadmin`
 
-Opens the admin panel with the following capabilities:
+Ouvre le panneau d'administration avec les fonctionnalités suivantes :
 
-- **Search accounts** — Find accounts by player name or account number
-- **View account details** — Balance, transactions, owner info
-- **Freeze/Unfreeze accounts** — Block all transactions on an account
-- **View transaction history** — Full audit trail
-- **Manage loans** — View and modify active loans
+- **Rechercher des comptes** — Trouver des comptes par nom de joueur ou numéro de compte
+- **Voir les détails du compte** — Solde, transactions, informations sur le propriétaire
+- **Geler/Dégeler les comptes** — Bloquer toutes les transactions sur un compte
+- **Voir l'historique des transactions** — Piste d'audit complète
+- **Gérer les prêts** — Consulter et modifier les prêts actifs
 
 ---
 
-## Account Freezing
+## Gel de Compte
 
-### Manual Freeze
-Admins (and bank managers grade 2+) can manually freeze accounts.
+### Gel Manuel
+Les administrateurs (et les responsables bancaires de grade 2+) peuvent geler manuellement des comptes.
 
-### Auto-Freeze
-When enabled, accounts are automatically frozen if:
-- Transaction amount exceeds $100,000 **AND**
-- Player's credit score is below 350
+### Gel Automatique
+Lorsqu'il est activé, les comptes sont automatiquement gelés si :
+- Le montant de la transaction dépasse $100,000 **ET**
+- Le score de crédit du joueur est inférieur à 350
 
 ```lua
 Config.Security.AutoFreezeEnabled = true
@@ -55,64 +55,64 @@ Config.Security.AutoFreezeThreshold = 100000
 Config.Security.AutoFreezeCreditScore = 350
 ```
 
-### Frozen Account Behavior
-- All transactions are blocked (deposit, withdraw, transfer)
-- Player sees a "frozen" message when trying to use the account
-- Only admins/managers can unfreeze
+### Comportement d'un Compte Gelé
+- Toutes les transactions sont bloquées (dépôt, retrait, virement)
+- Le joueur voit un message "gelé" lorsqu'il essaie d'utiliser le compte
+- Seuls les administrateurs/gestionnaires peuvent dégeler
 
 ---
 
-## Audit Logging
+## Journal d'Audit
 
-All admin actions are logged in the `pulsar_audit_log` database table:
+Toutes les actions administratives sont enregistrées dans la table de base de données `pulsar_audit_log` :
 
-- Who performed the action
-- What action was taken
-- When it happened
-- Target account/player
+- Qui a effectué l'action
+- Quelle action a été réalisée
+- Quand cela s'est produit
+- Compte/joueur ciblé
 
-Logs are automatically cleaned up after 30 days (configurable via `Config.Cleanup.AuditLogDays`).
+Les journaux sont automatiquement supprimés après 30 jours (configurable via `Config.Cleanup.AuditLogDays`).
 
 ---
 
-## Discord Webhooks
+## Webhooks Discord
 
-Set up Discord logging for real-time alerts:
+Configurez la journalisation Discord pour des alertes en temps réel :
 
 ```lua
 Config.Notifications.DiscordWebhook = 'https://discord.com/api/webhooks/...'
 ```
 
-### Logged Events
+### Événements Enregistrés
 
-| Event | Default |
-|-------|---------|
-| Large transactions (> $50,000) | Enabled |
-| Loan applications | Enabled |
-| Account creation | Enabled |
-| Account closure | Enabled |
-| Suspicious activity | Enabled |
-| Admin actions | Enabled |
+| Événement | Par défaut |
+|-----------|-----------|
+| Transactions importantes (> $50,000) | Activé |
+| Demandes de prêt | Activé |
+| Création de compte | Activé |
+| Fermeture de compte | Activé |
+| Activité suspecte | Activé |
+| Actions administratives | Activé |
 
-### Webhook Customization
+### Personnalisation du Webhook
 
 ```lua
 Config.Notifications.DiscordBotName = 'Pulsar Banking'
-Config.Notifications.DiscordAvatarUrl = ''  -- Custom avatar URL
-Config.Notifications.DiscordColor = 16750848  -- Embed color (decimal)
+Config.Notifications.DiscordAvatarUrl = ''  -- URL d'avatar personnalisé
+Config.Notifications.DiscordColor = 16750848  -- Couleur de l'embed (décimal)
 ```
 
 ---
 
-## Banker Job Permissions
+## Permissions des Employés de Banque
 
-Bank employees with the right grade can also perform admin-like tasks:
+Les employés de banque avec le bon grade peuvent également effectuer des tâches similaires à celles d'un administrateur :
 
-| Action | Required Grade |
-|--------|---------------|
-| Approve loans | Associate (1+) |
-| Freeze accounts | Manager (2+) |
-| View all accounts | Associate (1+) |
-| Generate reports | Manager (2+) |
+| Action | Grade requis |
+|--------|-------------|
+| Approuver les prêts | Associate (1+) |
+| Geler les comptes | Manager (2+) |
+| Voir tous les comptes | Associate (1+) |
+| Générer des rapports | Manager (2+) |
 
-See [Jobs Configuration](../configuration/jobs.md) for details.
+Voir [Configuration des Emplois](../configuration/jobs.md) pour plus de détails.

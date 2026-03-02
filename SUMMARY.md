@@ -1,8 +1,8 @@
 # Table of Contents
 
-- [Accueil](README.md)
+- [Welcome](README.md)
 
-## Nos Scripts
+## Our Scripts
 
 - [Pulsar Emotes](https://docs.pulsarscript.com/pulsar-emotes/)
 

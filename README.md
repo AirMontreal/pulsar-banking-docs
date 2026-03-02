@@ -10,7 +10,7 @@ Welcome to the official documentation for **Pulsar Script** — premium FiveM re
 
 A complete, modern banking system for QBCore & ESX. Features 4 account types, card system, loans with credit scoring, real-time investment market, organization accounts, invoicing, and more.
 
-**Price:** $79.99 | [Purchase](https://pulsarscript.com/product/7290799)
+**Price:** $49.99 | [Purchase](https://pulsarscript.com/product/7290799)
 
 ### [Pulsar Emotes](https://docs.pulsarscript.com/pulsar-emotes/)
 

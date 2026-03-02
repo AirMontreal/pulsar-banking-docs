@@ -16,7 +16,7 @@ A complete, modern banking system for QBCore & ESX. Features 4 account types, ca
 
 A feature-rich emote menu for FiveM with 400+ emotes, walk styles, props, shared emotes, facial expressions, keybinds, and a full settings system. Compatible with QBCore & ESX.
 
-**Price:** Free | [Documentation](https://docs.pulsarscript.com/pulsar-emotes/)
+**Price:** $12.99 | [Documentation](https://docs.pulsarscript.com/pulsar-emotes/)
 
 ---
 

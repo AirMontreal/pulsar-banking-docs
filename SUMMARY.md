@@ -1,6 +1,10 @@
 # Table of Contents
 
-- [Welcome](README.md)
+- [Accueil](README.md)
+
+## Nos Scripts
+
+- [Pulsar Emotes](https://docs.pulsarscript.com/pulsar-emotes/)
 
 ## Pulsar Banking
 
